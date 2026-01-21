@@ -55,7 +55,7 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
 }
 .carousel-track:active{cursor:grabbing}
 .project-box{
-  min-width:1000px;
+  min-width:500px;
   aspect-ratio:16/6;
   border:1px solid #000;
 }
