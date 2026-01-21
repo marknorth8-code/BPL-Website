@@ -62,7 +62,7 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
 .project-box img{width:50%;height:auto;object-fit:cover}
 
 .carousel-arrow{
-  position:relative;top:50%;transform:translateY(-50%);
+  position:absolute;top:100%;transform:translateY(-50%);
   width:40px;height:40px;
   background:#fff;border:1px solid #000;
   cursor:pointer;
