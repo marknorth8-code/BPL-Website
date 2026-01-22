@@ -5,146 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Barkertons Property</title>
 
-  <!-- Google Fonts (match existing site) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600&family=Inknut+Antiqua:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Re‑use existing global CSS – DO NOT TOUCH HOME PAGE FILES -->
+  <!-- Re‑use existing global CSS -->
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
     /* ABOUT PAGE ONLY – scoped styles */
+    .about-hero {
+      position: relative;
+      height: 420px;
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/placeholder-hero.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding-left: 60px;
+    }
+    .about-hero h1 {
+      font-family: 'Inknut Antiqua', serif;
+      font-size: 40px;
+      color: #fff;
+      margin: 0;
+    }
+    .about-section-dark {
+      background: #09126a;
+      color: #fff;
+      text-align: center;
+      padding: 80px 40px;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 22px;
+      line-height: 1.6;
+    }
+    .about-split {
+      display: flex;
+      min-height: 450px;
+    }
+    .about-split.reverse { flex-direction: row-reverse; }
+    .about-split .text {
+      width: 50%;
+      padding: 80px 60px;
+      font-family: 'Inknut Antiqua', serif;
+      font-size: 20px;
+      color: #09126a;
+      display: flex;
+      align-items: center;
+      line-height: 1.5;
+    }
+    .about-split .image {
+      width: 50%;
+      background-size: cover;
+      background-position: center;
+    }
+    .sectors-img { background-image: url('images/sectors-placeholder.png'); }
+    .world-img { background-image: url('images/world-placeholder.png'); }
 
-<header>
-  <div class="logo"><a href="index.html"><img src="https://placehold.co/400x90?text=Logo"></a></div>
-  <button class="hamburger" aria-label="menu">☰</button>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <button class="hamburger" aria-label="Menu">☰</button>
-  </nav>
-</header>
-    
-    .about-hero{
-      position:relative;
-      height:420px;
-      background:url('images/placeholder-hero.jpg') center/cover no-repeat;
-      display:flex;
-      align-items:center;
-      padding-left:60px;
+    .about-team {
+      position: relative;
+      height: 420px;
+      background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('images/team-placeholder.jpg') center/cover no-repeat;
+      transition: opacity 0.3s;
     }
-    .about-hero h1{
-      font-family:'Inknut Antiqua',serif;
-      font-size:40px;
-      color:#fff;
-      margin:0;
+    .about-team:hover { opacity: 0.9; }
+    .about-team h2 {
+      position: absolute;
+      left: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 34px;
+      color: #fff;
+      margin: 0;
+      border-bottom: 2px solid transparent;
+      transition: border 0.3s;
     }
+    .about-team:hover h2 { border-bottom: 2px solid #fff; }
 
-    .about-section-dark{
-      background:#09126a;
-      color:#fff;
-      text-align:center;
-      padding:60px 40px;
-      font-family:'Bricolage Grotesque',sans-serif;
-      font-size:22px;
+    .about-dark-right {
+      background: #09126a;
+      color: #fff;
+      padding: 40px 60px;
+      text-align: right;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 18px;
+      letter-spacing: 1px;
     }
+    .about-partner {
+      background: #fff;
+      color: #000;
+      padding: 100px 40px;
+      text-align: center;
+      font-family: 'Bricolage Grotesque', sans-serif;
+    }
+    .about-partner h3 { font-size: 32px; margin-bottom: 30px; }
+    .about-partner p { max-width: 800px; margin: 20px auto; font-size: 18px; line-height: 1.6; }
+    .about-partner a { color: #09126a; font-weight: 600; text-decoration: underline; }
 
-    .about-split{
-      display:flex;
-      min-height:380px;
-    }
-    .about-split .text{
-      width:50%;
-      padding:60px;
-      font-family:'Inknut Antiqua',serif;
-      font-size:22px;
-      color:#09126a;
-      display:flex;
-      align-items:center;
-    }
-    .about-split .image{
-      width:50%;
-      background-size:cover;
-      background-position:center;
-    }
-
-    .sectors-img{background-image:url('images/sectors-placeholder.png');}
-    .world-img{background-image:url('images/world-placeholder.png');}
-
-    .about-team{
-      position:relative;
-      height:420px;
-      background:url('images/team-placeholder.jpg') center/cover no-repeat;
-    }
-    .about-team a{
-      position:absolute;
-      inset:0;
-      text-decoration:none;
-    }
-    .about-team h2{
-      position:absolute;
-      left:60px;
-      top:50%;
-      transform:translateY(-50%);
-      font-family:'Bricolage Grotesque',sans-serif;
-      font-size:34px;
-      color:#fff;
-      margin:0;
-    }
-
-    .about-dark-right{
-      background:#09126a;
-      color:#fff;
-      padding:40px 60px;
-      text-align:right;
-      font-family:'Bricolage Grotesque',sans-serif;
-      font-size:22px;
-    }
-
-    .about-partner{
-      background:#fff;
-      color:#000;
-      padding:70px 40px;
-      text-align:center;
-      font-family:'Bricolage Grotesque',sans-serif;
-    }
-    .about-partner h3{
-      margin-top:0;
-      font-size:26px;
-    }
-    .about-partner p{
-      max-width:900px;
-      margin:20px auto;
-      line-height:1.6;
-    }
-    .about-partner a{
-      color:#000;
-      text-decoration:underline;
-    }
-
-    @media(max-width:900px){
-      .about-hero{padding-left:30px; height:300px;}
-      .about-hero h1{font-size:32px;}
-
-      .about-split{flex-direction:column;}
-      .about-split .text,
-      .about-split .image{width:100%;}
-      .about-split .image{height:260px;}
-
-      .about-team{height:300px;}
-      .about-team h2{left:30px; font-size:28px;}
-
-      .about-dark-right{text-align:center;}
+    @media(max-width: 900px){
+      .about-hero { padding-left: 30px; height: 300px; }
+      .about-hero h1 { font-size: 32px; }
+      .about-split, .about-split.reverse { flex-direction: column; }
+      .about-split .text, .about-split .image { width: 100%; }
+      .about-split .image { height: 300px; }
+      .about-team h2 { left: 30px; font-size: 28px; }
+      .about-dark-right { text-align: center; padding: 30px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION (copied exactly from home page) -->
   <header>
-    <div class="logo"><img src="images/logo.png" alt="Barkertons Property"></div>
+    <div class="logo"><a href="index.html"><img src="images/logo.png" alt="Barkertons Property"></a></div>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html" class="active">About</a>
@@ -152,66 +124,54 @@
     </nav>
   </header>
 
-  <!-- SECTION 1: HERO -->
   <section class="about-hero">
     <h1>About Us</h1>
   </section>
 
-  <!-- SECTION 2 -->
   <section class="about-section-dark">
-    We are building a strong track record of identifying excellent long‑term development sites, purchasing properties at value, and optimizing holding income to the next stage.
+    We are building a strong track record of identifying excellent long-term development sites, purchasing properties at value, and optimizing holding income to the next stage.
   </section>
 
-  <!-- SECTION 3 -->
   <section class="about-split">
     <div class="text">
-      We’ve got structured experience across a wide range of property sectors and disciplines, including valuations and appraisals, sales and acquisitions and all things lease management. This is brought together to assess a good site and its options. Then leant on to achieve the desired outcomes.
+      We’ve got structured experience across a wide range of property sectors and disciplines, including valuations and appraisals, sales and acquisitions and all things lease management.
     </div>
     <div class="image sectors-img"></div>
   </section>
 
-  <!-- SECTION 4 -->
-  <section class="about-split">
+  <section class="about-split reverse">
     <div class="text">
-      Great ideas aren't confined by borders, and neither is our team. Having completed projects in markets as varied as Brazil, New Zealand, and Australia, we bring a wealth of international experience home to Leicestershire. This broad perspective helps us apply refined working methods to property opportunities in even the most remote or unconventional markets.
+      Having completed projects in Brazil, New Zealand, and Australia, we bring a wealth of international experience home to Leicestershire, applying refined working methods to even the most unconventional markets.
     </div>
     <div class="image world-img"></div>
   </section>
 
-  <!-- SECTION 5 -->
-  <section class="about-team">
-    <a href="people.html">
-      <h2>People and Network</h2>
-    </a>
-  </section>
+  <a href="people.html" style="text-decoration:none;">
+    <section class="about-team">
+        <h2>People and Network</h2>
+    </section>
+  </a>
 
-  <!-- SECTION 6 -->
   <section class="about-section-dark">
-    As active developers and property owners, we bring first‑hand experience to the property lifecycle from acquisition and construction to final disposal. This ownership‑led perspective ensures we manage your assets with the same diligence and strategic focus we do to our own
+    As active developers and property owners, we bring first‑hand experience to the property lifecycle. This ownership‑led perspective ensures we manage assets with the same diligence we do our own.
   </section>
 
-  <!-- SECTION 7 -->
   <section class="about-dark-right">
-    We are Chartered Surveyors and regulated by RICS
+    We are Chartered Surveyors and regulated by <a href="https://www.rics.org" target="_blank" style="color:#fff; text-decoration:underline;">RICS</a>
   </section>
 
-  <!-- SECTION 8 -->
   <section class="about-partner">
     <h3>Partnering with Barkertons</h3>
-    <p>
-      Whether you are a tenant seeking new accommodation or an investor planning your next project, we provide comprehensive expertise across the entire property cycle.
-    </p>
-    <p>
-      Based in Leicestershire with an international network, we welcome all enquiries and keen to discuss options to collaborate or assist:
-    </p>
-    <p><a href="contact.html">get in touch</a></p>
+    <p>Whether you are a tenant seeking new accommodation or an investor planning your next project, we provide comprehensive expertise across the entire property cycle.</p>
+    <p>Based in Leicestershire with an international network, we welcome all enquiries.</p>
+    <p><a href="contact.html">Get in touch</a></p>
   </section>
 
-  <!-- FOOTER (copied exactly from home page) -->
-<footer class="footer">
-  <small>© Barkerton Properties Limited <span id="year"></span></small>
-  <div>+44 7470 292 634<br>barkertons@outlook.com</div>
-</footer>
+  <footer class="footer">
+    <small>© Barkerton Properties Limited <span id="year"></span></small>
+    <div>+44 7470 292 634<br>barkertons@outlook.com</div>
+  </footer>
 
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
