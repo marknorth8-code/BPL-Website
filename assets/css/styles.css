@@ -33,43 +33,31 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
   }
 
 }
-/* MOBILE HERO – SINGLE SOURCE OF TRUTH */
+/* MOBILE HERO – CSS ONLY, NO HTML CHANGES */
 @media (max-width:768px){
 
   .hero{
     position:static;
-    height:auto;
     min-height:unset;
+    height:auto;
     margin-bottom:0;
-    padding-bottom:0;
     overflow:hidden;
   }
 
   .hero img{
     width:100%;
-    height:auto;          /* overrides desktop 100% */
-    aspect-ratio:4 / 5;   /* mobile-friendly crop */
+    height:auto;
+    aspect-ratio:4 / 5;
     object-fit:cover;
-    object-position:center;
     display:block;
   }
 
   .hero-text{
-    position:static;      /* remove absolute positioning */
-    padding:16px 20px 20px;
+    position:static;
+    padding:18px 20px 22px;
+    font-size:26px;        /* critical */
+    line-height:1.25;      /* critical – prevents clipping */
     text-align:left;
-  }
-
-  .hero h1{
-    font-size:26px;
-    line-height:1.15;
-    margin:0 0 6px;
-  }
-
-  .hero p{
-    font-size:16px;
-    line-height:1.35;
-    margin:0;
   }
 
   section + section{
