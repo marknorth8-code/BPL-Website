@@ -29,20 +29,29 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
 /* MOBILE HERO FIX */
 @media (max-width:768px){
 
+  .hero{
+    height:auto;
+  }
+
   .hero img{
-    height:260px;          /* compress image */
+    width:100%;
+    aspect-ratio:4 / 5;   /* mobile-friendly, more square */
+    height:auto;
+    object-fit:cover;
+    object-position:center;
   }
 
   .hero h1{
-    font-size:26px;        /* shrink headline */
+    font-size:26px;
     line-height:1.2;
   }
 
   .hero p{
-    font-size:16px;        /* shrink subtext */
+    font-size:16px;
   }
 
 }
+
 @media (max-width:768px){
 
   .hero-text{
