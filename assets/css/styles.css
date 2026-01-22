@@ -37,8 +37,8 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
 @media (max-width:768px){
 
   .hero{
-    position:absolute;
-    min-height:unset;
+    position:relative;
+    min-height:auto;
     height:auto;
     margin-bottom:0;
     overflow:hidden;
@@ -53,11 +53,11 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
   }
 
   .hero-text{
-    position:static;
+    position:absolute;
     padding:18px 20px 22px;
-    font-size:26px;        /* critical */
-    line-height:1.25;      /* critical – prevents clipping */
-    text-align:left;
+    font-size:24px;        /* critical */
+    line-height:1.2;      /* critical – prevents clipping */
+    text-align:right;
   }
 
   section + section{
