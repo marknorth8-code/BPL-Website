@@ -26,28 +26,37 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
   font-family:'Inknut Antiqua',serif;
   font-size:40px;color:#fff;text-align:right;
 }
-/* MOBILE HERO – CLEAN & SINGLE SOURCE OF TRUTH */
+@media (max-width:768px){
+
+  .hero img{
+    height:auto;
+  }
+
+}
+/* MOBILE HERO – SINGLE SOURCE OF TRUTH */
 @media (max-width:768px){
 
   .hero{
+    position:static;
     height:auto;
+    min-height:unset;
     margin-bottom:0;
     padding-bottom:0;
-    min-height:unset;
   }
 
   .hero img{
     width:100%;
-    aspect-ratio:4 / 5;   /* more square for mobile */
-    height:auto;
+    height:auto;          /* overrides desktop 100% */
+    aspect-ratio:4 / 5;   /* mobile-friendly crop */
     object-fit:cover;
     object-position:center;
     display:block;
   }
 
   .hero-text{
-    position:static;
+    position:static;      /* remove absolute positioning */
     padding:16px 20px 20px;
+    text-align:left;
   }
 
   .hero h1{
