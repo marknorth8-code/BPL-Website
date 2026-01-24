@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>People | Barkertons Property</title>
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua&family=Bricolage+Grotesque:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600&family=Inknut+Antiqua:wght@400;600&display=swap" rel="stylesheet">
+
 
   <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -58,19 +60,13 @@ header{
 /* =========================
    SECTION 2 – TEXT
 ========================= */
-.people-intro{
-  background:#fff;
-  padding:40px 40px 20px 40px;
-}
-.people-intro p{
-  font-size:22px;
-  color:#09126a;
-  margin:0;
-  max-width:900px;
-}
-.people-intro p{
-  max-width:900px;
-  margin:0 auto;
+.people-intro {
+  background: #fff;
+  padding: 40px 40px 20px 40px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 22px;
+  line-height: 1.6;
+  text-align: center;
 }
 
 /* =========================
@@ -161,11 +157,18 @@ header{
 
 <!-- HEADER (COPY YOUR REAL NAV FROM HOME/ABOUT IF REQUIRED) -->
 <header>
-  <div class="logo">BARKERTONS</div>
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Barkertons Property">
+    </a>
+  </div>
+
+  <button class="hamburger" aria-label="menu">☰</button>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="people.html">People</a>
+    <a href="people.html" class="active">People</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
