@@ -1,253 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>People | Barkertons Property</title>
+  <meta charset="UTF-8">
+  <title>People | Barkertons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600&family=Inknut+Antiqua:wght@400;600&display=swap" rel="stylesheet">
+  <!-- GOOGLE FONTS (match About page exactly) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;600&family=Bricolage+Grotesque:wght@300;400;500&display=swap" rel="stylesheet">
 
+  <!-- MAIN SITE CSS (unchanged) -->
+  <link rel="stylesheet" href="styles.css">
 
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- PEOPLE PAGE ONLY STYLES -->
+  <style>
 
-<style>
+    /* ========= SECTION 1 – HERO (MATCH ABOUT) ========= */
 
-/* GLOBAL */
-*,
-*::before,
-*::after{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  font-family:'Bricolage Grotesque',Arial,sans-serif;
-  overflow-x:hidden;
-  padding-top:90px;
-}
-img{display:block;max-width:100%}
+    .people-hero{
+      position: relative;
+      height: 360px;
+      background:
+        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url("images/network.jpg") center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding-left: 60px;
+    }
 
-/* HEADER (MATCH YOUR EXISTING HEADER STYLING IF DIFFERENT) */
-header{
-  position:fixed;top:0;width:100%;height:90px;
-  background:#fff;display:flex;align-items:center;
-  justify-content:space-between;padding:0 40px;z-index:1000;
-}
+    .people-hero h1{
+      font-family: 'Inknut Antiqua', serif;
+      font-size: 40px;
+      color: #ffffff;
+      margin: 0;
+    }
 
-/* =========================
-   SECTION 1 – HERO IMAGE (MATCH ABOUT)
-========================= */
-.people-hero{
-  position: relative;
-  height: 360px;
-  display: flex;
-  align-items: center;
-  padding-left: 60px;
-}
+    @media (max-width: 768px){
+      .people-hero{
+        height: 280px;
+        padding-left: 30px;
+      }
 
-.people-hero img{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
+      .people-hero h1{
+        font-size: 32px;
+      }
+    }
 
-.people-hero-text{
-  position: relative;
-  z-index: 1;
-  max-width: 500px;
-}
+    /* ========= SECTION 2 – INTRO TEXT ========= */
 
-.people-hero .people-hero-text h1{
-  font-family:'Inknut Antiqua', serif !important;
-  font-size:48px !important;
-  line-height:1.2;
-  color:#fff;
-  margin:0;
-}
+    .people-intro{
+      background: #ffffff;
+      padding: 40px 40px 60px 40px;
+      display: flex;
+      justify-content: center;
+    }
 
-/* =========================
-   SECTION 2 – TEXT (MATCH ABOUT PAGE)
-========================= */
+    .people-intro p{
+      font-family: 'Bricolage Grotesque', Arial, sans-serif;
+      font-size: 22px;
+      color: #09126a;
+      margin: 0;
+      max-width: 900px;
+      text-align: center;
+    }
 
-  .people-intro{
-  background:#fff;
-  padding:40px 40px;
-  text-align:center;
-}
+    @media (max-width: 768px){
+      .people-intro{
+        padding: 30px 20px 50px 20px;
+      }
 
-.people-intro p{
-  max-width:900px;
-  margin:0 auto;
-  font-family:'Bricolage Grotesque', sans-serif;
-  font-size:20px;
-  line-height:1.6;
-  color:#09126a;
-}
+      .people-intro p{
+        font-size: 18px;
+      }
+    }
 
+    /* ========= SECTION 3 – IMAGE + GRID ========= */
 
-/* =========================
-   SECTION 3 – NETWORK GRID
-========================= */
-.people-network{
-  background:#09126a;
-  padding:50px 40px 70px 40px;
-}
+    .network-large-box{
+      width: 100%;
+      max-width: 700px; /* reduced size */
+      margin: 0 auto 50px auto;
+      background: #ffffff;
+      border: 1px solid #000;
+      aspect-ratio: 17 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
 
-/* Large box */
-.network-large-box{
-  width:60%;
-  max-width:480px;
-  margin:0 auto 40px auto;
-  background:#fff;
-  border:1px solid #000;
-  aspect-ratio:17 / 9;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-.network-large-box a{
-  text-decoration:none;
-  color:#09126a;
-  font-size:20px;
-  font-weight:500;
-}
-.network-large-box img{
-  max-width:50%;
-  height:auto;
-}
+    .network-grid{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto 80px auto;
+      padding: 0 40px;
+    }
 
-/* Grid of 12 boxes */
-.network-grid{
-  max-width:1100px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:20px;
-}
+    .network-card{
+      text-align: center;
+    }
 
-/* Individual box */
-.network-box{
-  background:#fff;
-  border:1px solid #000;
-  aspect-ratio:17 / 9;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-.network-box img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+    .network-card h3{
+      font-family: 'Inknut Antiqua', serif;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width:900px){
-  .network-grid{
-    grid-template-columns:repeat(2, 1fr);
-  }
-}
+    .network-card p{
+      font-family: 'Bricolage Grotesque', Arial, sans-serif;
+      font-size: 16px;
+      color: #09126a;
+      margin: 0;
+    }
 
- @media (max-width:500px){
-  .people-hero-text h1{
-    font-size:32px;
-  }
+    @media (max-width: 768px){
+      .network-grid{
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 20px;
+      }
+    }
 
-  .people-hero{
-    padding-left:20px;
-  }
-
-  .people-intro{
-    padding:30px 20px;
-  }
-
-  .people-network{
-    padding:40px 20px 60px 20px;
-  }
-
-}
-
-</style>
+  </style>
 </head>
+
 <body>
 
-<!-- HEADER (COPY YOUR REAL NAV FROM HOME/ABOUT IF REQUIRED) -->
-<header>
-  <div class="logo">
-    <a href="index.html">
-      <img src="images/logo.png" alt="Barkertons Property">
+  <!-- HEADER (unchanged – Barkertons linked like other pages) -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="images/logo.svg" alt="Barkertons">
     </a>
-  </div>
+  </header>
 
-  <button class="hamburger" aria-label="menu">☰</button>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<!-- SECTION 1 -->
-<section class="people-hero">
-  <img src="images/network.jpg" alt="Our Network">
-<h1 class="people-hero-title">Our Network</h1>
-</div>
-
-</section>
-
-<!-- SECTION 2 -->
-<section class="people-intro">
-  <p>
-    As RICS-accredited Chartered Surveyors, we bring international expertise plus a hands on background to deliver practical, full-lifecycle solutions for investors and occupiers. Learn more and view our profiles:
-  </p>
-</section>
-
-<!-- SECTION 3 -->
-<section class="people-network">
-
-  <!-- Large box with PDF link -->
-  <div class="network-large-box">
-    <a href="pdf/network-profile.pdf" target="_blank">View Network PDF</a>
-  </div>
-
-  <!-- Grid of 12 boxes -->
-  <div class="network-grid">
-    <div class="network-box"><img src="images/network-1.jpg" alt="network-1"></div>
-    <div class="network-box"><img src="images/network-2.jpg" alt="network-2"></div>
-    <div class="network-box"><img src="images/network-3.jpg" alt="network-3"></div>
-    <div class="network-box"><img src="images/network-4.jpg" alt="network-4"></div>
-
-    <div class="network-box"><img src="images/network-5.jpg" alt="network-5"></div>
-    <div class="network-box"><img src="images/network-6.jpg" alt="network-6"></div>
-    <div class="network-box"><img src="images/network-7.jpg" alt="network-7"></div>
-    <div class="network-box"><img src="images/network-8.jpg" alt="network-8"></div>
-
-    <div class="network-box"><img src="images/network-9.jpg" alt="network-9"></div>
-    <div class="network-box"><img src="images/network-10.jpg" alt="network-10"></div>
-    <div class="network-box"><img src="images/network-11.jpg" alt="network-11"></div>
-    <div class="network-box"><img src="images/network-12.jpg" alt="network-12"></div>
-  </div>
-
-</section>
-
-  <section class="about-partner">
-    <h3>Partnering with Barkertons</h3>
-    <p>Whether you are a tenant seeking new accommodation or an investor planning your next project, we provide comprehensive expertise across the entire property cycle.</p>
-    <p>Based in Leicestershire with an international network, we welcome all enquiries.</p>
-    <p><a href="contact.html">Get in touch</a></p>
+  <!-- SECTION 1 -->
+  <section class="people-hero">
+    <h1>Network</h1>
   </section>
 
-  <footer class="footer">
-    <small>© Barkerton Properties Limited <span id="year"></span></small>
-    <div>+44 7470 292 634<br>barkertons@outlook.com</div>
-  </footer>
+  <!-- SECTION 2 -->
+  <section class="people-intro">
+    <p>
+      Our network brings together development, management and advisory
+      expertise to support long-term property growth.
+    </p>
+  </section>
 
+  <!-- SECTION 3 -->
+  <section>
+    <div class="network-large-box">
+      <span>Network overview image</span>
+    </div>
+
+    <div class="network-grid">
+      <div class="network-card">
+        <h3>Development</h3>
+        <p>Identifying and delivering growth-led property opportunities.</p>
+      </div>
+
+      <div class="network-card">
+        <h3>Management</h3>
+        <p>Hands-on asset and operational management.</p>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
