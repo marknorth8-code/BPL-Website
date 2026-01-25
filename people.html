@@ -15,6 +15,10 @@
 
   <!-- PEOPLE PAGE ONLY STYLES -->
   <style>
+.network-section{
+  background-color: #f5f5f5; /* match About page tone */
+  padding: 80px 40px;
+}
 
     /* ========= SECTION 1 – HERO (MATCH ABOUT) ========= */
 
@@ -76,6 +80,11 @@
     }
 
     /* ========= SECTION 3 – IMAGE + GRID ========= */
+.network-large-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
     .network-large-box{
       width: 100%;
@@ -88,12 +97,6 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      <div class="network-large-box">
-  <a href="assets/pdfs/network.pdf" target="_blank" rel="noopener">
-    <img src="images/network-overview.jpg" alt="Network overview">
-  </a>
-</div>
-
     }
 
     .network-grid{
@@ -120,19 +123,6 @@
       font-size: 16px;
       color: #09126a;
       margin: 0;
-    }
-
-    @media (max-width: 768px){
-      .network-grid{
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 0 20px;
-        .network-section {
-  background-color: #09126a;
-  padding: 80px 40px;
-}
-
-      }
     }
 
   </style>
@@ -170,10 +160,12 @@
   </section>
 
   <!-- SECTION 3 -->
-  <section>
-    <div class="network-large-box">
-      <span>Network overview image</span>
-    </div>
+ <section class="network-section">
+   <div class="network-large-box">
+  <a href="assets/pdfs/network.pdf" target="_blank" rel="noopener">
+    <img src="images/network-overview.jpg" alt="Network overview">
+  </a>
+</div>
 
     <div class="network-grid">
       <div class="network-card">
@@ -185,16 +177,13 @@
         <h3>Management</h3>
         <p>Hands-on asset and operational management.</p>
       </div>
-    </div>
-  </section>
+     </section>
 
   <footer class="footer">
     <small>© Barkerton Properties Limited <span id="year"></span></small>
     <div>+44 7470 292 634<br>barkertons@outlook.com</div>
   </footer>
 
-  </div>
-</footer>
 
 </body>
 </html>
