@@ -14,101 +14,82 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <!-- PEOPLE PAGE ONLY STYLES -->
-  <style>
+<style>
+/* ========= PEOPLE PAGE FIX ========= */
+.people-hero{
+  margin-top: 90px;
+}
+
+/* ========= SECTION 1 – HERO ========= */
+.people-hero{
+  position: relative;
+  height: 360px;
+  background:
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url("images/network.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+}
+
+.people-hero h1{
+  font-family: 'Inknut Antiqua', serif;
+  font-size: 40px;
+  color: #ffffff;
+  margin: 0;
+}
+
+@media (max-width: 768px){
+  .people-hero{
+    height: 280px;
+    padding-left: 30px;
+  }
+
+  .people-hero h1{
+    font-size: 32px;
+  }
+}
+
+/* ========= SECTION 2 – INTRO ========= */
+.people-intro{
+  background: #ffffff;
+  padding: 40px 40px 60px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.people-intro p{
+  font-family: 'Bricolage Grotesque', Arial, sans-serif;
+  font-size: 22px;
+  color: #09126a;
+  margin: 0;
+  max-width: 900px;
+  text-align: center;
+}
+
+/* ========= SECTION 3 – NETWORK ========= */
 .network-section{
-  background-color: #09126a; /* brand blue */
+  background-color: #09126a;
   padding: 80px 40px;
 }
 
-    <script src="assets/js/main.js"></script>
+.network-large-box{
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 50px auto;
+  background: #ffffff;
+  border: 1px solid #000;
+  aspect-ratio: 17 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    /* ========= SECTION 1 – HERO (MATCH ABOUT) ========= */
-
-    .people-hero{
-      position: relative;
-      height: 360px;
-      background:
-        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-        url("images/network.jpg") center / cover no-repeat;
-      display: flex;
-      align-items: center;
-      padding-left: 60px;
-    }
-
-    .people-hero h1{
-      font-family: 'Inknut Antiqua', serif;
-      font-size: 40px;
-      color: #ffffff;
-      margin: 0;
-    }
-
-    @media (max-width: 768px){
-      .people-hero{
-        height: 280px;
-        padding-left: 30px;
-      }
-
-      .people-hero h1{
-        font-size: 32px;
-      }
-    }
-
-    /* ========= SECTION 2 – INTRO TEXT ========= */
-
-    .people-intro{
-      background: #ffffff;
-      padding: 40px 40px 60px 40px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .people-intro p{
-      font-family: 'Bricolage Grotesque', Arial, sans-serif;
-      font-size: 22px;
-      color: #09126a;
-      margin: 0;
-      max-width: 900px;
-      text-align: center;
-    }
-
-    @media (max-width: 768px){
-      .people-intro{
-        padding: 30px 20px 50px 20px;
-      }
-
-      .people-intro p{
-        font-size: 18px;
-      }
-    }
-
-    /* ========= SECTION 3 – IMAGE + GRID ========= */
 .network-large-box img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
-    .network-large-box{
-      width: 100%;
-      max-width: 500px; /* reduced size */
-      margin: 0 auto 50px auto;
-      background: #ffffff;
-      border: 1px solid #000;
-      aspect-ratio: 17 / 9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .network-grid{
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-      max-width: 900px;
-      margin: 0 auto 80px auto;
-      padding: 0 40px;
-    }
 
 .network-grid{
   display: grid;
@@ -122,7 +103,6 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  display: block;
   background: #ffffff;
 }
 
@@ -139,8 +119,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+</style>
 
-  </style>
 </head>
 
 <body>
