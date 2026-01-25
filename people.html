@@ -16,8 +16,10 @@
   <!-- PEOPLE PAGE ONLY STYLES -->
   <style>
 .network-section{
-  background-color: #f5f5f5; /* match About page tone */
+  background-color: #09126a; /* brand blue */
   padding: 80px 40px;
+}
+
 }
 
     /* ========= SECTION 1 – HERO (MATCH ABOUT) ========= */
@@ -124,6 +126,35 @@
       color: #09126a;
       margin: 0;
     }
+.network-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.network-grid img{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  background: #ffffff;
+}
+
+/* Tablet */
+@media (max-width: 1024px){
+  .network-grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .network-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
   </style>
 </head>
@@ -167,17 +198,20 @@
   </a>
 </div>
 
-    <div class="network-grid">
-      <div class="network-card">
-        <h3>Development</h3>
-        <p>Identifying and delivering growth-led property opportunities.</p>
-      </div>
-
-      <div class="network-card">
-        <h3>Management</h3>
-        <p>Hands-on asset and operational management.</p>
-      </div>
-     </section>
+<div class="network-grid">
+  <img src="images/network/01.jpg" alt="">
+  <img src="images/network/02.jpg" alt="">
+  <img src="images/network/03.jpg" alt="">
+  <img src="images/network/04.jpg" alt="">
+  <img src="images/network/05.jpg" alt="">
+  <img src="images/network/06.jpg" alt="">
+  <img src="images/network/07.jpg" alt="">
+  <img src="images/network/08.jpg" alt="">
+  <img src="images/network/09.jpg" alt="">
+  <img src="images/network/10.jpg" alt="">
+  <img src="images/network/11.jpg" alt="">
+  <img src="images/network/12.jpg" alt="">
+</div>
 
   <footer class="footer">
     <small>© Barkerton Properties Limited <span id="year"></span></small>
