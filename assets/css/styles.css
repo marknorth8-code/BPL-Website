@@ -94,7 +94,7 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
 .carousel-track{
   display:flex;gap:20px;
   gap: 50px;
-    padding-top: 40px;      /* reduce top spacing */
+    padding-top: 10px;      /* reduce top spacing */
   padding-bottom: 80px;   /* extra space below the carousel */
    border-radius: 8px;     /* optional: slightly rounded corners */
   transition:transform .4s ease;
