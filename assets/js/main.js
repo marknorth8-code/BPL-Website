@@ -29,34 +29,42 @@ document.addEventListener('DOMContentLoaded', () => {
   const right = document.querySelector('.carousel-arrow.right');
   const wrapper = document.querySelector('.carousel-wrapper');
 
-  if (!track || !items.length || !left || !right || !wrapper) {
+  if (!track || items.length === 0 || !left || !right || !wrapper) {
     console.warn('Carousel elements not found');
     return;
   }
 
   let currentTranslate = 0;
   const gap = parseInt(getComputedStyle(track).gap) || 40;
-  const itemWidth = items[0].offsetWidth;
-  const totalWidth = items.length * (itemWidth + gap) - gap;
-  const wrapperWidth = wrapper.offsetWidth;
-  const maxScroll = Math.max(totalWidth - wrapperWidth, 0);
+
+  function getItemWidth() {
+    return items[0].getBoundingClientRect().width;
+  }
+
+  function getMaxScroll() {
+    const itemWidth = getItemWidth();
+    const totalWidth = items.length * (itemWidth + gap) - gap;
+    const wrapperWidth = wrapper.getBoundingClientRect().width;
+    return Math.max(totalWidth - wrapperWidth, 0);
+  }
 
   function updateTranslate() {
+    const maxScroll = getMaxScroll();
     if (currentTranslate > 0) currentTranslate = 0;
     if (currentTranslate < -maxScroll) currentTranslate = -maxScroll;
     track.style.transform = `translateX(${currentTranslate}px)`;
   }
 
   // Arrow click
-  left.addEventListener('click', () => { currentTranslate += itemWidth + gap; updateTranslate(); });
-  right.addEventListener('click', () => { currentTranslate -= itemWidth + gap; updateTranslate(); });
+  left.addEventListener('click', () => { currentTranslate += getItemWidth() + gap; updateTranslate(); });
+  right.addEventListener('click', () => { currentTranslate -= getItemWidth() + gap; updateTranslate(); });
 
-  // Continuous scrolling
+  // Continuous arrow hold
   let scrollInterval = null;
   function startScroll(direction) {
     stopScroll();
     scrollInterval = setInterval(() => {
-      currentTranslate -= direction * 10; // smooth increment
+      currentTranslate -= direction * 10;
       updateTranslate();
     }, 16);
   }
@@ -79,8 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!dragging) return;
     dragging = false;
     const moved = currentTranslate - prevTranslate;
-    if (moved < -50) currentTranslate -= itemWidth + gap;
-    if (moved > 50) currentTranslate += itemWidth + gap;
+    if (moved < -50) currentTranslate -= getItemWidth() + gap;
+    if (moved > 50) currentTranslate += getItemWidth() + gap;
     updateTranslate();
   });
   window.addEventListener('mousemove', e => {
