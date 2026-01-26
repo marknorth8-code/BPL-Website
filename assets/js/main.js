@@ -23,26 +23,37 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ================= CAROUSEL (HOME ONLY) ================= */
+// ================= CAROUSEL =================
 const track = document.querySelector('.carousel-track');
-const items = document.querySelectorAll('.project-box');
+const items = document.querySelectorAll('.insight-card');
 const left = document.querySelector('.carousel-arrow.left');
 const right = document.querySelector('.carousel-arrow.right');
 
 if (track && items.length && left && right) {
-
-  let index = 0, startX = 0, prevTranslate = 0, currentTranslate = 0, dragging = false;
+  let index = 0;
+  let currentTranslate = 0;
+  const gap = 50; // same as CSS
 
   function update() {
-    const w = items[0].offsetWidth + 20;
-    currentTranslate = -index * w;
+    const visibleCards = Math.floor(track.offsetWidth / items[0].offsetWidth);
+    const maxIndex = items.length - visibleCards;
+    if (index > maxIndex) index = maxIndex;
+    if (index < 0) index = 0;
+
+    currentTranslate = -index * (items[0].offsetWidth + gap);
     track.style.transform = `translateX(${currentTranslate}px)`;
-    left.style.display = index === 0 ? 'none' : 'block';
-    right.style.display = index >= items.length - 1 ? 'none' : 'block';
+
+    left.style.display = index === 0 ? 'flex' : 'flex';
+    right.style.display = index >= maxIndex ? 'none' : 'flex';
   }
 
-  left.onclick = () => { if (index > 0) { index--; update(); } };
-  right.onclick = () => { if (index < items.length - 1) { index++; update(); } };
+  left.onclick = () => { index--; update(); };
+  right.onclick = () => { index++; update(); };
 
+  update();
+
+  // Optional: mouse drag
+  let dragging = false, startX = 0, prevTranslate = 0;
   track.addEventListener('mousedown', e => {
     dragging = true;
     startX = e.pageX;
@@ -53,8 +64,8 @@ if (track && items.length && left && right) {
     if (!dragging) return;
     dragging = false;
     const moved = currentTranslate - prevTranslate;
-    if (moved < -100 && index < items.length - 1) index++;
-    if (moved > 100 && index > 0) index--;
+    if (moved < -100) index++;
+    if (moved > 100) index--;
     update();
   });
 
@@ -63,8 +74,6 @@ if (track && items.length && left && right) {
     currentTranslate = prevTranslate + (e.pageX - startX);
     track.style.transform = `translateX(${currentTranslate}px)`;
   });
-
-  update();
 }
 
 /* ================= MOBILE NAV ================= */
