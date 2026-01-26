@@ -6,7 +6,7 @@ body {
 }
 
 .insights-page {
-  padding: 20px 40px;
+  padding: 10px 40px 20px;
   text-align: center;
 }
 .insights-title{
@@ -34,7 +34,10 @@ header {
   font-family: 'Inknut Antiqua', serif;
   font-size: 40px;
   color: #fff;
-  margin-bottom: 60px;
+  margin: 0 0 25px 0;
+}
+.insights-page {
+  padding-top: 110px; /* 90px header + small breathing room */
 }
 
 .carousel {
