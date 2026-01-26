@@ -35,20 +35,23 @@ if (track && items.length && left && right) {
   const gap = 50; // same as CSS
 
   function update() {
-    const visibleCards = Math.floor(track.offsetWidth / items[0].offsetWidth);
-    const maxIndex = items.length - visibleCards;
-    if (index > maxIndex) index = maxIndex;
-    if (index < 0) index = 0;
+  const visibleCards = Math.floor(track.offsetWidth / items[0].offsetWidth);
+  const maxIndex = items.length - visibleCards;
+  
+  // Clamp index so carousel doesn't scroll too far
+  if (index > maxIndex) index = maxIndex;
+  if (index < 0) index = 0;
 
-    currentTranslate = -index * (items[0].offsetWidth + gap);
-    track.style.transform = `translateX(${currentTranslate}px)`;
+  // Move the carousel
+  currentTranslate = -index * (items[0].offsetWidth + gap);
+  track.style.transform = `translateX(${currentTranslate}px)`;
 
-    left.style.display = index === 0 ? 'flex' : 'flex';
-    right.style.display = index >= maxIndex ? 'none' : 'flex';
-  }
-
-  left.onclick = () => { index--; update(); };
-  right.onclick = () => { index++; update(); };
+  // ARROWS ALWAYS VISIBLE
+  left.style.display = 'flex';
+  right.style.display = 'flex';
+}
+left.onclick = () => { index--; update(); };
+right.onclick = () => { index++; update(); };
 
   update();
 
