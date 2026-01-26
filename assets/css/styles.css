@@ -100,7 +100,9 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
 
 /* Track that holds all cards */
 .carousel-wrapper {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .carousel-track {
