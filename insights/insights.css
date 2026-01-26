@@ -11,7 +11,7 @@ body {
 }
 .insights-title{
   text-align: left;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 
 .summary {
@@ -37,7 +37,7 @@ header {
   margin: 0 0 10px 0;
 }
 .insights-page {
-  padding-top: 110px; /* 90px header + small breathing room */
+  padding-top: 80px; /* 90px header + small breathing room */
 }
 
 .carousel {
