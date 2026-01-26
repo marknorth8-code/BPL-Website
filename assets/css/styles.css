@@ -95,13 +95,13 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
 .section-carousel {
   position: relative;
   width: 80%;
-  padding: 40px 0;
+  padding: 40px 20;
 }
 
 /* Track that holds all cards */
 .carousel-wrapper {
   width: 80%;
-  margin: 0 auto;
+  margin: 40 auto;
   overflow: hidden;
 }
 
@@ -118,8 +118,8 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
   transform: translateY(-50%);
   width: 80px;
   height: 80px;
-  background: #09126a;
-  color: #fff;
+  background: #fff;
+  color: #09126a;
   font-size: 48px;
   border: none;
   cursor: pointer;
