@@ -9,6 +9,12 @@ body {
   padding: 120px 40px;
   text-align: center;
 }
+.summary {
+  font-size: 14px;
+  color: #000;
+  min-height: 80px;     /* 👈 controls how tall it is */
+  line-height: 1.6;
+}
 
 .insights-title {
   font-family: 'Inknut Antiqua', serif;
