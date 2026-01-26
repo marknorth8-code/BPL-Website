@@ -95,13 +95,16 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
 .section-carousel {
   position: relative;
   width: 100%;
-  padding: 40px 20;
+  padding: 40px 0;
+    display: flex;      /* Center the wrapper */
+  justify-content: center;
+  align-items: center;
 }
 
 /* Track that holds all cards */
 .carousel-wrapper {
-  width: 100%;
-  margin: 40 auto;
+  width: 80%;
+  margin: 00 auto;
   overflow: hidden;
 }
 
@@ -116,21 +119,22 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background: #fff;
   color: #09126a;
-  font-size: 48px;
-  border: none;
+  font-size: 32px;
+  border: 1px solid #09126a;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
+  border-radius: 50%;
 }
 
-.carousel-arrow.left { left: 0px; }   /* outside carousel */
-.carousel-arrow.right { right: 0px; } /* outside carousel */
+.carousel-arrow.left { left: 2%; }   /* outside carousel */
+.carousel-arrow.right { right: 2%; } /* outside carousel */
 
 .carousel-arrow:hover {
   background: #0b158a;
