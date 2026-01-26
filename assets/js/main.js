@@ -22,7 +22,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+/* ================= MOBILE NAV ================= */
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('hamburger')) {
+    const nav = document.querySelector('nav');
+    if (nav) nav.classList.toggle('active');
+  }
+});
+
+/* ================= HOME PAGE CAROUSEL ================= */
+window.addEventListener('load', () => { // wait for images to load
   const track = document.querySelector('.carousel-track');
   const items = document.querySelectorAll('.project-box');
   const left = document.querySelector('.carousel-arrow.left');
@@ -55,35 +64,71 @@ document.addEventListener('DOMContentLoaded', () => {
     track.style.transform = `translateX(${currentTranslate}px)`;
   }
 
-  // Arrow click
-  left.addEventListener('click', () => { currentTranslate += getItemWidth() + gap; updateTranslate(); });
-  right.addEventListener('click', () => { currentTranslate -= getItemWidth() + gap; updateTranslate(); });
+  /* ---------- Arrow Click ---------- */
+  left.addEventListener('click', () => {
+    currentTranslate += getItemWidth() + gap;
+    updateTranslate();
+  });
 
-  // Continuous arrow hold
+  right.addEventListener('click', () => {
+    currentTranslate -= getItemWidth() + gap;
+    updateTranslate();
+  });
+
+  /* ---------- Continuous Arrow Hold ---------- */
   let scrollInterval = null;
   function startScroll(direction) {
     stopScroll();
     scrollInterval = setInterval(() => {
-      currentTranslate -= direction * 10;
+      currentTranslate -= direction * 10; // smooth scroll
       updateTranslate();
-    }, 16);
+    }, 16); // ~60fps
   }
-  function stopScroll() { clearInterval(scrollInterval); scrollInterval = null; }
+  function stopScroll() {
+    clearInterval(scrollInterval);
+    scrollInterval = null;
+  }
 
   left.addEventListener('mousedown', () => startScroll(-1));
   right.addEventListener('mousedown', () => startScroll(1));
   window.addEventListener('mouseup', stopScroll);
   window.addEventListener('mouseleave', stopScroll);
 
-  // Drag support
+  /* ---------- Drag / Mouse Support ---------- */
   let dragging = false, startX = 0, prevTranslate = 0;
+
   track.addEventListener('mousedown', e => {
     dragging = true;
     startX = e.pageX;
     prevTranslate = currentTranslate;
     stopScroll();
+    track.style.cursor = 'grabbing';
   });
+
   window.addEventListener('mouseup', () => {
+    if (!dragging) return;
+    dragging = false;
+    track.style.cursor = 'grab';
+    const moved = currentTranslate - prevTranslate;
+    if (moved < -50) currentTranslate -= getItemWidth() + gap;
+    if (moved > 50) currentTranslate += getItemWidth() + gap;
+    updateTranslate();
+  });
+
+  window.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    currentTranslate = prevTranslate + (e.pageX - startX);
+    updateTranslate();
+  });
+
+  /* ---------- Touch / Mobile Drag ---------- */
+  track.addEventListener('touchstart', e => {
+    dragging = true;
+    startX = e.touches[0].pageX;
+    prevTranslate = currentTranslate;
+  });
+
+  track.addEventListener('touchend', () => {
     if (!dragging) return;
     dragging = false;
     const moved = currentTranslate - prevTranslate;
@@ -91,22 +136,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (moved > 50) currentTranslate += getItemWidth() + gap;
     updateTranslate();
   });
-  window.addEventListener('mousemove', e => {
+
+  track.addEventListener('touchmove', e => {
     if (!dragging) return;
-    currentTranslate = prevTranslate + (e.pageX - startX);
+    currentTranslate = prevTranslate + (e.touches[0].pageX - startX);
     updateTranslate();
   });
 
-  // Recalculate on resize
+  /* ---------- Recalculate on Resize ---------- */
   window.addEventListener('resize', updateTranslate);
 
   updateTranslate();
-});
-
-/* ================= MOBILE NAV ================= */
-document.addEventListener('click', function (e) {
-  if (e.target.classList.contains('hamburger')) {
-    const nav = document.querySelector('nav');
-    if (nav) nav.classList.toggle('active');
-  }
 });
