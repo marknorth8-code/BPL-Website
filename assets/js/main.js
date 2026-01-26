@@ -32,15 +32,19 @@ const right = document.querySelector('.carousel-arrow.right');
 if (track && items.length && left && right && window.innerWidth > 768) {
   let index = 0;
   let currentTranslate = 0;
-  const gap = 40;
+
+  const wrapper = document.querySelector('.carousel-wrapper');
 
   function update() {
-    const visibleCards = Math.floor(track.offsetWidth / items[0].offsetWidth);
+    const itemWidth = items[0].offsetWidth;
+    const gap = parseInt(getComputedStyle(track).gap) || 40;
+    const visibleCards = Math.floor(wrapper.offsetWidth / (itemWidth + gap));
     const maxIndex = items.length - visibleCards;
+
     if (index > maxIndex) index = maxIndex;
     if (index < 0) index = 0;
 
-    currentTranslate = -index * (items[0].offsetWidth + gap);
+    currentTranslate = -index * (itemWidth + gap);
     track.style.transform = `translateX(${currentTranslate}px)`;
   }
 
@@ -49,7 +53,7 @@ if (track && items.length && left && right && window.innerWidth > 768) {
 
   update();
 
-  // Optional: mouse drag support for desktop
+  // Optional: mouse drag support
   let dragging = false, startX = 0, prevTranslate = 0;
 
   track.addEventListener('mousedown', e => {
@@ -62,8 +66,8 @@ if (track && items.length && left && right && window.innerWidth > 768) {
     if (!dragging) return;
     dragging = false;
     const moved = currentTranslate - prevTranslate;
-    if (moved < -100) index++;
-    if (moved > 100) index--;
+    if (moved < -50) index++;
+    if (moved > 50) index--;
     update();
   });
 
@@ -72,6 +76,9 @@ if (track && items.length && left && right && window.innerWidth > 768) {
     currentTranslate = prevTranslate + (e.pageX - startX);
     track.style.transform = `translateX(${currentTranslate}px)`;
   });
+
+  // Recalculate on window resize
+  window.addEventListener('resize', update);
 }
 
 /* ================= MOBILE NAV ================= */
