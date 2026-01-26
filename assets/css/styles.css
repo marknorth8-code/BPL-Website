@@ -105,14 +105,14 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
 
 /* Track that holds all cards */
 .carousel-wrapper {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   overflow: hidden;
 }
 
 .carousel-track {
   display: flex;
-  gap: 60px;
+  gap: 40px;
   transition: transform 0.4s ease;
 }
 
@@ -145,8 +145,8 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
 /* Cards */
 .insight-card {
   background: #f5f5f5;
-  width: 250px;           /* fixed width */
-  height: 200px;          /* fixed height */
+  width: 350px;           /* fixed width */
+  height: 250px;          /* fixed height */
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -161,12 +161,10 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 .project-box img {
-  width: 250px;
+  width: 350px;
+  height: 250px;
   flex-shrink: 0;
-  height: 200px;
-  min-width: 250px;
-  max-width: 250px;
-  object-fit: cover;
+    object-fit: cover;
   border-radius: 8px;
   }
 .insight-card img {
