@@ -30,26 +30,25 @@ document.addEventListener('click', function (e) {
   }
 });
 
-/* ================= HOME PAGE CAROUSEL ================= */
-window.addEventListener('load', () => { // wait for images to load
-  const track = document.querySelector('.carousel-track');
-  const items = document.querySelectorAll('.project-box');
-  const left = document.querySelector('.carousel-arrow.left');
-  const right = document.querySelector('.carousel-arrow.right');
-  const wrapper = document.querySelector('.carousel-wrapper');
+window.addEventListener('load', () => {
+  const carousel = document.querySelector('.home-carousel');
+  if (!carousel) return;
+
+  const track = carousel.querySelector('.carousel-track');
+  const items = carousel.querySelectorAll('.project-box');
+  const left = carousel.querySelector('.carousel-arrow.left');
+  const right = carousel.querySelector('.carousel-arrow.right');
+  const wrapper = carousel.querySelector('.carousel-wrapper');
 
   if (!track || items.length === 0 || !left || !right || !wrapper) {
-    console.warn('Carousel elements not found');
+    console.warn('Home carousel elements not found');
     return;
   }
 
   let currentTranslate = 0;
   const gap = parseInt(getComputedStyle(track).gap) || 40;
 
-  function getItemWidth() {
-    return items[0].getBoundingClientRect().width;
-  }
-
+  function getItemWidth() { return items[0].getBoundingClientRect().width; }
   function getMaxScroll() {
     const itemWidth = getItemWidth();
     const totalWidth = items.length * (itemWidth + gap) - gap;
@@ -64,84 +63,53 @@ window.addEventListener('load', () => { // wait for images to load
     track.style.transform = `translateX(${currentTranslate}px)`;
   }
 
-  /* ---------- Arrow Click ---------- */
-  left.addEventListener('click', () => {
-    currentTranslate += getItemWidth() + gap;
-    updateTranslate();
-  });
+  // Arrow click
+  left.addEventListener('click', () => { currentTranslate += getItemWidth() + gap; updateTranslate(); });
+  right.addEventListener('click', () => { currentTranslate -= getItemWidth() + gap; updateTranslate(); });
 
-  right.addEventListener('click', () => {
-    currentTranslate -= getItemWidth() + gap;
-    updateTranslate();
-  });
-
-  /* ---------- Continuous Arrow Hold ---------- */
+  // Continuous arrow hold
   let scrollInterval = null;
   function startScroll(direction) {
     stopScroll();
     scrollInterval = setInterval(() => {
-      currentTranslate -= direction * 10; // smooth scroll
+      currentTranslate -= direction * 5; // smoother, smaller increments
       updateTranslate();
-    }, 16); // ~60fps
+    }, 16);
   }
-  function stopScroll() {
-    clearInterval(scrollInterval);
-    scrollInterval = null;
-  }
+  function stopScroll() { clearInterval(scrollInterval); scrollInterval = null; }
 
   left.addEventListener('mousedown', () => startScroll(-1));
   right.addEventListener('mousedown', () => startScroll(1));
   window.addEventListener('mouseup', stopScroll);
   window.addEventListener('mouseleave', stopScroll);
 
-  /* ---------- Drag / Mouse Support ---------- */
+  // Drag support
   let dragging = false, startX = 0, prevTranslate = 0;
-
   track.addEventListener('mousedown', e => {
     dragging = true;
     startX = e.pageX;
     prevTranslate = currentTranslate;
     stopScroll();
-    track.style.cursor = 'grabbing';
   });
-
   window.addEventListener('mouseup', () => {
     if (!dragging) return;
     dragging = false;
-    track.style.cursor = 'grab';
     const moved = currentTranslate - prevTranslate;
     if (moved < -50) currentTranslate -= getItemWidth() + gap;
     if (moved > 50) currentTranslate += getItemWidth() + gap;
     updateTranslate();
   });
-
   window.addEventListener('mousemove', e => {
     if (!dragging) return;
     currentTranslate = prevTranslate + (e.pageX - startX);
     updateTranslate();
   });
 
-  /* ---------- Touch / Mobile Drag ---------- */
-  track.addEventListener('touchstart', e => {
-    dragging = true;
-    startX = e.touches[0].pageX;
-    prevTranslate = currentTranslate;
-  });
+  // Recalculate on resize
+  window.addEventListener('resize', updateTranslate);
 
-  track.addEventListener('touchend', () => {
-    if (!dragging) return;
-    dragging = false;
-    const moved = currentTranslate - prevTranslate;
-    if (moved < -50) currentTranslate -= getItemWidth() + gap;
-    if (moved > 50) currentTranslate += getItemWidth() + gap;
-    updateTranslate();
-  });
-
-  track.addEventListener('touchmove', e => {
-    if (!dragging) return;
-    currentTranslate = prevTranslate + (e.touches[0].pageX - startX);
-    updateTranslate();
-  });
+  updateTranslate();
+});
 
   /* ---------- Recalculate on Resize ---------- */
   window.addEventListener('resize', updateTranslate);
