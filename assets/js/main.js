@@ -25,14 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ================= CAROUSEL (HOME ONLY) ================= */
 // ================= CAROUSEL =================
 const track = document.querySelector('.carousel-track');
-const items = document.querySelectorAll('.insight-card');
+const items = document.querySelectorAll('.project-box');
 const left = document.querySelector('.carousel-arrow.left');
 const right = document.querySelector('.carousel-arrow.right');
 
 if (track && items.length && left && right) {
   let index = 0;
   let currentTranslate = 0;
-  const gap = 50; // same as CSS
+  const gap = 40; // same as CSS
 
   function update() {
   const visibleCards = Math.floor(track.offsetWidth / items[0].offsetWidth);
