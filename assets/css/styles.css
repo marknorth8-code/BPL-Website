@@ -126,8 +126,8 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
 /* SECTION 4 CAROUSEL – TIDYED CARDS */
 .insight-card {
   background: #f5f5f5;
-  width: 320px;           /* fixed width for uniformity */
-  height: 450px;          /* fixed height for all cards */
+  width: 450px;           /* fixed width for uniformity */
+  height: 320px;          /* fixed height for all cards */
   display: flex;
   flex-direction: column;
   overflow: hidden;       /* ensures images don’t overflow */
