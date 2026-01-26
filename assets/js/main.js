@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const right = document.querySelector('.carousel-arrow.right');
   const wrapper = document.querySelector('.carousel-wrapper');
 
-  if (!track || items.length === 0 || !left || !right || !wrapper) {
+  if (!track || !items.length || !left || !right || !wrapper) {
     console.warn('Carousel elements not found');
     return;
   }
@@ -39,13 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const itemWidth = items[0].offsetWidth;
   const totalWidth = items.length * (itemWidth + gap) - gap;
   const wrapperWidth = wrapper.offsetWidth;
-  const maxScroll = totalWidth - wrapperWidth;
-
-  // Hide arrows if everything fits
-  if (maxScroll <= 0) {
-    left.style.display = 'none';
-    right.style.display = 'none';
-  }
+  const maxScroll = Math.max(totalWidth - wrapperWidth, 0);
 
   function updateTranslate() {
     if (currentTranslate > 0) currentTranslate = 0;
@@ -53,44 +47,34 @@ document.addEventListener('DOMContentLoaded', () => {
     track.style.transform = `translateX(${currentTranslate}px)`;
   }
 
+  // Arrow click
+  left.addEventListener('click', () => { currentTranslate += itemWidth + gap; updateTranslate(); });
+  right.addEventListener('click', () => { currentTranslate -= itemWidth + gap; updateTranslate(); });
+
   // Continuous scrolling
   let scrollInterval = null;
-
   function startScroll(direction) {
     stopScroll();
     scrollInterval = setInterval(() => {
-      currentTranslate -= direction * 10;
+      currentTranslate -= direction * 10; // smooth increment
       updateTranslate();
-    }, 16); // ~60fps
+    }, 16);
   }
-
-  function stopScroll() {
-    if (scrollInterval) {
-      clearInterval(scrollInterval);
-      scrollInterval = null;
-    }
-  }
+  function stopScroll() { clearInterval(scrollInterval); scrollInterval = null; }
 
   left.addEventListener('mousedown', () => startScroll(-1));
   right.addEventListener('mousedown', () => startScroll(1));
   window.addEventListener('mouseup', stopScroll);
   window.addEventListener('mouseleave', stopScroll);
 
-  left.addEventListener('click', () => { currentTranslate += itemWidth + gap; updateTranslate(); });
-  right.addEventListener('click', () => { currentTranslate -= itemWidth + gap; updateTranslate(); });
-
-  updateTranslate();
-
   // Drag support
   let dragging = false, startX = 0, prevTranslate = 0;
-
   track.addEventListener('mousedown', e => {
     dragging = true;
     startX = e.pageX;
     prevTranslate = currentTranslate;
     stopScroll();
   });
-
   window.addEventListener('mouseup', () => {
     if (!dragging) return;
     dragging = false;
@@ -99,19 +83,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (moved > 50) currentTranslate += itemWidth + gap;
     updateTranslate();
   });
-
   window.addEventListener('mousemove', e => {
     if (!dragging) return;
     currentTranslate = prevTranslate + (e.pageX - startX);
     updateTranslate();
   });
 
-  window.addEventListener('resize', () => {
-    const newWrapperWidth = wrapper.offsetWidth;
-    const newMaxScroll = totalWidth - newWrapperWidth;
-    if (currentTranslate < -newMaxScroll) currentTranslate = -newMaxScroll;
-    updateTranslate();
-  });
+  // Recalculate on resize
+  window.addEventListener('resize', updateTranslate);
+
+  updateTranslate();
 });
 
 /* ================= MOBILE NAV ================= */
