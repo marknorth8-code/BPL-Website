@@ -22,8 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-/* ================= CAROUSEL (HOME ONLY) ================= */
-// ================= CAROUSEL =================
+// ================= CAROUSEL WITH CONTINUOUS ARROW SCROLL =================
 const track = document.querySelector('.carousel-track');
 const items = document.querySelectorAll('.project-box');
 const left = document.querySelector('.carousel-arrow.left');
@@ -32,8 +31,8 @@ const right = document.querySelector('.carousel-arrow.right');
 if (track && items.length && left && right && window.innerWidth > 768) {
   let index = 0;
   let currentTranslate = 0;
-
   const wrapper = document.querySelector('.carousel-wrapper');
+  let scrollInterval = null; // for continuous scrolling
 
   function update() {
     const itemWidth = items[0].offsetWidth;
@@ -48,6 +47,29 @@ if (track && items.length && left && right && window.innerWidth > 768) {
     track.style.transform = `translateX(${currentTranslate}px)`;
   }
 
+  function startScroll(direction) {
+    // Scroll every 150ms while holding
+    if (scrollInterval) clearInterval(scrollInterval);
+    scrollInterval = setInterval(() => {
+      index += direction;
+      update();
+    }, 150);
+  }
+
+  function stopScroll() {
+    if (scrollInterval) {
+      clearInterval(scrollInterval);
+      scrollInterval = null;
+    }
+  }
+
+  // Arrow click + hold
+  left.addEventListener('mousedown', () => startScroll(-1));
+  right.addEventListener('mousedown', () => startScroll(1));
+  window.addEventListener('mouseup', stopScroll);
+  window.addEventListener('mouseleave', stopScroll);
+
+  // Also support single click
   left.addEventListener('click', () => { index--; update(); });
   right.addEventListener('click', () => { index++; update(); });
 
@@ -60,6 +82,7 @@ if (track && items.length && left && right && window.innerWidth > 768) {
     dragging = true;
     startX = e.pageX;
     prevTranslate = currentTranslate;
+    stopScroll(); // stop arrows if dragging
   });
 
   window.addEventListener('mouseup', () => {
@@ -80,6 +103,7 @@ if (track && items.length && left && right && window.innerWidth > 768) {
   // Recalculate on window resize
   window.addEventListener('resize', update);
 }
+
 
 /* ================= MOBILE NAV ================= */
 document.addEventListener('click', function (e) {
