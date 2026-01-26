@@ -94,7 +94,7 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
 /* Carousel wrapper */
 .section-carousel {
   position: relative;
-  width: 100%;
+  width: 80%;
   padding: 40px 0;
 }
 
