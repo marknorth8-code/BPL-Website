@@ -94,20 +94,20 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
 /* Carousel wrapper */
 .section-carousel {
   position: relative;
-  width: 80%;
+  width: 100%;
   padding: 40px 20;
 }
 
 /* Track that holds all cards */
 .carousel-wrapper {
-  width: 80%;
+  width: 100%;
   margin: 40 auto;
   overflow: hidden;
 }
 
 .carousel-track {
   display: flex;
-  gap: 50px;
+  gap: 80px;
   transition: transform 0.4s ease;
 }
 
