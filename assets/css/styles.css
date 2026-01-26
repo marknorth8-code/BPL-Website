@@ -115,8 +115,24 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
   cursor:pointer;
   z-index:100;
 }
-.carousel-arrow.left{left:-10px}
-.carousel-arrow.right{right:-10px}
+.carousel-arrow.left{
+  left:-50px;
+}
+
+.carousel-arrow.right{
+  right:-50px;
+}
+.project-box{
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-box:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+.project-box{
+  cursor:pointer;
+}
 
 /* SECTION 5 */
 .section-people{
