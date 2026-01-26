@@ -90,8 +90,9 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
 
 /* SECTION 4 CAROUSEL */
 .carousel-section{padding:20px 40px}
-.carousel-wrapper{position:relative;overflow:hidden}
+.carousel-wrapper{position:relative;overflow:visible}
 .carousel-track{
+ overflow: hidden;
   display:flex;gap:20px;
   gap: 50px;
     padding-top: 10px;      /* reduce top spacing */
