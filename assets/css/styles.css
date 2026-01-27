@@ -180,21 +180,21 @@ nav a{margin-left:30px;font-size:24px;color:#000;text-decoration:none}
 }
 
 /* SECTION 5 */
-.section-people{
-  background:#09126a;color:#fff;
-  padding:20px 40px;
+.section-people {
+  background-color: #09126a !important; /* forces brand blue */
+  color: #fff !important;               /* forces white text */
+  padding: 20px 40px;
+  text-align: center;
 }
-.section-people h3{
-  font-family:'Bricolage Grotesque',Arial,sans-serif;
-  font-size:30px;
+
+.section-people h3 {
+  color: #fff !important;
+  font-size: 30px;
 }
-.section-people img{
-  display:block;
-  width:1000px;max-width:100%;
-  aspect-ratio:1000/450;
-  margin:40px auto 0;
-  border:1px solid #000;
-  object-fit:cover;
+
+.section-people img {
+  border: none; /* remove any border that looks like white */
+  background: transparent; /* ensure image doesn’t cover background */
 }
 
 /* SECTION 6 */
