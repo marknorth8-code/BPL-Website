@@ -49,6 +49,14 @@ nav a {
   text-decoration: none;
 }
 
+.contact-title {
+  font-family: 'Inknut Antiqua', serif;  /* matches other titles */
+  font-size: 30px;                       /* same as main titles */
+  color: #fff;                            /* white text */
+  margin-bottom: 25px;
+  text-align: left;                       /* align left like other titles */
+}
+
 /* ================= HAMBURGER (desktop hidden, mobile visible) ================= */
 .hamburger {
   display: none; /* hidden on desktop */
@@ -282,18 +290,6 @@ nav a {
   text-align: left;                     /* align left */
 }
 
-/* ================= VALUE SECTION MOBILE ================= */
-.value-grid {
-  grid-template-columns: 1fr; /* stack items vertically */
-  gap: 30px; /* optional: smaller gap for mobile */
-}
-
-.value-item img {
-  width: 100%;
-  aspect-ratio: auto; /* allows image to scale naturally */
-  height: auto;
-}
-
 /* ================= MOBILE STYLES ================= */
 @media (max-width: 768px) {
 
@@ -399,6 +395,18 @@ nav a {
     font-size: 30px;
   }
 }
+/* ================= VALUE SECTION MOBILE ================= */
+.value-grid {
+  grid-template-columns: 1fr; /* stack items vertically */
+  gap: 30px; /* optional: smaller gap for mobile */
+}
+
+.value-item img {
+  width: 100%;
+  aspect-ratio: auto; /* allows image to scale naturally */
+  height: auto;
+}
+
 /* ================= INSIGHTS LINK SECTION ================= */
 .insights-link {
   background: #7B014C; /* new background color */
