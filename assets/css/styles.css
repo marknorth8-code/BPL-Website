@@ -218,6 +218,33 @@ nav a {
   border: none;
   background: transparent;
 }
+/* ================= VALUE SECTION MOBILE ================= */
+.value-grid {
+  grid-template-columns: 1fr; /* stack items vertically */
+  gap: 30px; /* optional: smaller gap for mobile */
+}
+
+.value-item img {
+  width: 100%;
+  aspect-ratio: auto; /* allows image to scale naturally */
+  height: auto;
+}
+
+/* ================= INSIGHTS LINK SECTION ================= */
+.insights-link {
+  background: #7B014C; /* new background color */
+  color: #fff;         /* text color for readability */
+  padding: 30px 40px;
+  text-align: left;    /* aligns text left */
+  font-family: 'Inknut Antiqua', serif; /* matches other titles */
+  font-size: 24px;
+  border-radius: 6px;  /* optional: soft corners */
+}
+
+.insights-link a {
+  color: #fff;         /* link color */
+  text-decoration: underline;
+}
 
 /* ================= SECTION 6 ================= */
 .section-partner {
@@ -394,31 +421,4 @@ nav a {
   .value-section h2 {
     font-size: 30px;
   }
-}
-/* ================= VALUE SECTION MOBILE ================= */
-.value-grid {
-  grid-template-columns: 1fr; /* stack items vertically */
-  gap: 30px; /* optional: smaller gap for mobile */
-}
-
-.value-item img {
-  width: 100%;
-  aspect-ratio: auto; /* allows image to scale naturally */
-  height: auto;
-}
-
-/* ================= INSIGHTS LINK SECTION ================= */
-.insights-link {
-  background: #7B014C; /* new background color */
-  color: #fff;         /* text color for readability */
-  padding: 30px 40px;
-  text-align: left;    /* aligns text left */
-  font-family: 'Inknut Antiqua', serif; /* matches other titles */
-  font-size: 24px;
-  border-radius: 6px;  /* optional: soft corners */
-}
-
-.insights-link a {
-  color: #fff;         /* link color */
-  text-decoration: underline;
 }
