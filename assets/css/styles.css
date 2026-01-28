@@ -230,17 +230,16 @@ nav a {
   font-family: 'Times New Roman', serif;
   font-size: 14px;
 }
-  /* ================= HAMBURGER (desktop hidden) ================= */
+
+/* ================= HAMBURGER (desktop hidden, mobile visible) ================= */
 .hamburger {
-  display: none;
+  display: none; /* hidden on desktop */
+}
+
 /* ================= MOBILE STYLES ================= */
 @media (max-width: 768px) {
 
-  /* HEADER / HAMBURGER */
-  nav {
-    display: none;
-  }
-
+  /* show hamburger on mobile */
   .hamburger {
     display: block;
     font-size: 28px;
@@ -249,6 +248,12 @@ nav a {
     cursor: pointer;
   }
 
+  /* hide desktop nav initially */
+  nav {
+    display: none;
+  }
+
+  /* mobile nav active */
   nav.active {
     display: block;
     position: absolute;
@@ -264,6 +269,7 @@ nav a {
     margin: 15px 0;
     font-size: 22px;
   }
+}
 
   /* HERO */
   .hero {
