@@ -274,6 +274,14 @@ nav a {
   line-height: 1.6;
   margin: 0;
 }
+.contact-title {
+  font-family: 'Inknut Antiqua', serif; /* match other titles */
+  font-size: 30px;                     /* same as other main titles */
+  color: #fff;                          /* white text */
+  margin-bottom: 25px;
+  text-align: left;                     /* align left */
+}
+
 
 /* ================= MOBILE STYLES ================= */
 @media (max-width: 768px) {
