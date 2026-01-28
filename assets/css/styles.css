@@ -133,6 +133,7 @@ nav a {
 .home-carousel h3 {
   color: #09126a;
   font-size: 30px;
+  font-family: 'Inknut Antiqua', serif; /* matches other titles */
   text-align: left !important;
   margin-bottom: 40px;
 }
