@@ -312,7 +312,7 @@ nav a {
 
 .contact-page .contact-title,
 .contact-section .contact-title {
-  font-family: 'Inknut Antiqua', serif;  /* matches other main titles */
+  font-family: 'Inknut Antiqua', serif !important;  /* matches other main titles */
   font-size: 30px;                       /* same as other titles */
   color: #fff;                            /* white text */
   margin-bottom: 25px;
