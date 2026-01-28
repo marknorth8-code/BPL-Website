@@ -230,7 +230,9 @@ nav a {
   font-family: 'Times New Roman', serif;
   font-size: 14px;
 }
-
+  /* ================= HAMBURGER (desktop hidden) ================= */
+.hamburger {
+  display: none;
 /* ================= MOBILE STYLES ================= */
 @media (max-width: 768px) {
 
