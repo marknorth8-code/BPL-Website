@@ -309,13 +309,17 @@ nav a {
   line-height: 1.6;
   margin: 0;
 }
-.contact-title {
-  font-family: 'Inknut Antiqua', serif; /* match other titles */
-  font-size: 30px;                     /* same as other main titles */
-  color: #fff;                          /* white text */
+
+.contact-page .contact-title,
+.contact-section .contact-title {
+  font-family: 'Inknut Antiqua', serif;  /* matches other main titles */
+  font-size: 30px;                       /* same as other titles */
+  color: #fff;                            /* white text */
   margin-bottom: 25px;
-  text-align: left;                     /* align left */
+  text-align: left;                       /* left-aligned text */
+  align-self: flex-start;                 /* ensures left alignment in flex layout */
 }
+
 
 /* ================= MOBILE STYLES ================= */
 @media (max-width: 768px) {
