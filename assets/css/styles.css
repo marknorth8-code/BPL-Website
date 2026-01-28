@@ -268,13 +268,13 @@ nav a{margin-left:30px;font-size:24px;color:#09126a;text-decoration:none}
 .value-section {
   background: #09126a;
   color: #fff;
-  padding: 80px 40px;
+  padding: 40px 40px 60px;
 }
 
 .value-section h2 {
   font-family: 'Inknut Antiqua', serif;
-  font-size: 36px;
-  margin: 0 0 50px 0;
+  font-size: 24px;
+  margin: 0 0 30px 0;
   text-align: left;
 }
 
