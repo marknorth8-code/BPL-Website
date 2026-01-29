@@ -53,7 +53,7 @@ loadHTML('header', '../header.html');
 loadHTML('footer', '../footer.html');
 
 // Load carousel cards from JSON
-fetch('JS/insights.json')
+fetch('JS/insights-data.json')
   .then(res => res.json())
   .then(data => {
     const track = document.querySelector('.carousel-track');
