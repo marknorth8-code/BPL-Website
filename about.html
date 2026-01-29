@@ -60,11 +60,12 @@
       background-size: cover;
       background-position: center;
     }
-    .world-img {
+.world-img {
   background-image: url('images/world.webp');
-  background-size: contain;      /* no cropping */
+  background-size: contain;      /* show full map */
   background-repeat: no-repeat;
-  background-position: left top; /* shows the corner */
+  background-position: center;   /* centers NZ instead of cropping it off */
+  min-height: 450px;             /* ensures enough vertical space */
 }
 
     .sectors-img { background-image: url('images/sectors.webp'); }
