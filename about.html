@@ -59,11 +59,12 @@
       align-items: center;
       line-height: 1.5;
     }
-    .about-split .image {
-      width: 50%;
-      background-size: cover;
-      background-position: center;
-    }
+ .about-split .image {
+  width: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .about-split .image.world-img {
   background-image: url('images/world.webp');
   background-repeat: no-repeat;
@@ -71,8 +72,12 @@
   background-size: 95%;
 }
 
-    .sectors-img { background-image: url('images/sectors.webp'); }
-    .world-img { background-image: url('images/world.webp'); }
+.sectors-img {
+  background-image: url('images/sectors.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90%;   /* 🔑 makes the image slightly smaller */
+}
 
     .about-team {
       position: relative;
