@@ -9,8 +9,7 @@ html, body {
 body {
   font-family: 'Bricolage Grotesque', Arial, sans-serif;
   overflow-x: hidden;
-  padding-top: 90px;
-}
+ }
 img {
   display: block;
   max-width: 100%;
