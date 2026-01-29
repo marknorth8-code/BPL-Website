@@ -1,173 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon.ico">
   <meta charset="UTF-8">
-    <meta name="description" content="The people and network working with Barkertons providing commercial development project management and land investment advice in Leicestershire">
+  <meta name="description" content="The people and network working with Barkertons providing commercial development project management and land investment advice in Leicestershire">
   <title>People | Barkertons</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- GOOGLE FONTS (match About page exactly) -->
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;600&family=Bricolage+Grotesque:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- MAIN SITE CSS (unchanged) -->
+  <!-- MAIN CSS -->
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <!-- PEOPLE PAGE ONLY STYLES -->
-<style>
-
-/* ========= SECTION 1 – HERO (RESET, NO EFFECTS) ========= */
-.people-hero {
-  position: relative;
-  width: 100%;
-  height: 420px;            /* fixed, predictable */
-  overflow: hidden;        /* enables clean cropping */
-  display: flex;
-  align-items: center;
-  padding-left: 60px;
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/people.webp') center/cover no-repeat;        
-}
-
-.people-hero h1 {
-  position: relative;
-  z-index: 2;
-  font-family: 'Inknut Antiqua', serif;
-  font-size: 40px;
-  color: #fff;
-  margin: 0;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
+  <style>
+  /* ========= HERO ========= */
   .people-hero {
-    height: 300px;
-    padding-left: 30px;
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/people.webp') center/cover no-repeat;        
   }
-
   .people-hero h1 {
-    font-size: 32px;
+    position: relative;
+    z-index: 2;
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 40px;
+    color: #fff;
+    margin: 0;
   }
-}
-
-/* ========= SECTION 2 – INTRO ========= */
-.people-intro{
-  background: #ffffff;
-  padding: 40px 40px 60px 40px;
-  display: flex;
-  justify-content: center;
-}
-
-.people-intro p{
-  font-family: 'Bricolage Grotesque', Arial, sans-serif;
-  font-size: 22px;
-  color: #09126a;
-  margin: 0;
-  max-width: 900px;
-  text-align: center;
-}
-
-/* ========= SECTION 3 – NETWORK ========= */
-.network-section{
-  background-color: #09126a;
-  padding: 80px 40px;
-}
-
-.network-large-box{
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto 50px auto;
-  background: #ffffff;
-  border: 1px solid #000;
-  aspect-ratio: 17 / 9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.network-large-box img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.network-grid{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 70px;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.network-grid img{
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  background: #ffffff;
-}
-
-/* Tablet */
-@media (max-width: 1024px){
-  .network-grid{
-    grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 768px) {
+    .people-hero {
+      height: 300px;
+      padding-left: 30px;
+    }
+    .people-hero h1 {
+      font-size: 32px;
+    }
   }
-}
 
-/* Mobile */
-@media (max-width: 768px){
-  .network-grid{
-    grid-template-columns: repeat(2, 1fr);
+  /* ========= PROFILE SECTION ========= */
+  .profile-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 60px 40px;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
   }
-}
-</style>
+  .profile-photo {
+    flex: 1 1 300px;
+    max-width: 400px;
+  }
+  .profile-photo img {
+    width: 100%;
+    border-radius: 12px;
+  }
+  .profile-bio {
+    flex: 2 1 400px;
+    font-family: 'Bricolage Grotesque', Arial, sans-serif;
+    font-size: 20px;
+    color: #09126a;
+  }
+  .profile-bio p {
+    margin-bottom: 20px;
+  }
+  .profile-bio a {
+    display: inline-block;
+    padding: 10px 25px;
+    background: #09126a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+  .profile-bio a:hover {
+    background: #0d1a99;
+  }
 
+  /* ========= NETWORK INTRO ========= */
+  .network-intro {
+    text-align: center;
+    padding: 40px 20px;
+    font-family: 'Bricolage Grotesque', Arial, sans-serif;
+    font-size: 20px;
+    color: #09126a;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* ========= NETWORK SECTION ========= */
+  .network-section {
+    background-color: #09126a;
+    padding: 80px 40px;
+    color: #fff;
+    text-align: center;
+  }
+  .network-section h2 {
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+  .network-large-box {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 50px auto;
+    background: #ffffff;
+    border: 1px solid #000;
+    aspect-ratio: 17 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .network-large-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .network-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 70px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .network-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background: #ffffff;
+  }
+  @media (max-width: 1024px){
+    .network-grid{
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 768px){
+    .network-grid{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  </style>
 </head>
 
 <body>
 
- <div id="header" style="height:90px;"></div>
+<div id="header" style="height:90px;"></div>
 
-  <!-- SECTION 1 -->
-  <section class="people-hero">
-    <h1>People and Network</h1>
-  </section>
+<!-- HERO -->
+<section class="people-hero">
+  <h1>People and Network</h1>
+</section>
 
-  <!-- SECTION 2 -->
-  <section class="people-intro">
-
+<!-- PROFILE -->
+<section class="profile-section">
+  <div class="profile-photo">
+    <img src="images/mark.jpg" alt="Mark North">
+  </div>
+  <div class="profile-bio">
     <p>
-     Barkertons is a principal-led property business, headed by Mark North and supported by an established network of trusted professionals.
-Click on the photo below for Mark’s profile and experience
+      Mark North leads Barkertons as a principal property developer and investor. With experience across commercial and residential sectors, Mark combines hands-on project management with a strong international network of trusted professionals.
     </p>
-  </section>
+    <a href="assets/Profile-Mark.pdf" target="_blank" rel="noopener">Download PDF Profile</a>
+  </div>
+</section>
 
-  <!-- SECTION 3 -->
- <section class="network-section">
-   <div class="network-large-box">
-  <a href="assets/Profile-Mark.pdf" target="_blank" rel="noopener">
-    <img src="images/team.webp" alt="Network overview">
-  </a>
-</div>
+<!-- NETWORK INTRO -->
+<section class="network-intro">
+  <p>
+    Our network connects Barkertons with expert partners and trusted advisors across multiple property disciplines. [Edit this text to highlight network purpose and reach.]
+  </p>
+</section>
 
-<div class="network-grid">
-<img src="images/network-1.jpg" alt="Network diagram 1" loading="lazy">
-<img src="images/network-2.jpg" alt="Network diagram 2" loading="lazy">
-<img src="images/network-3.jpg" alt="Network diagram 3" loading="lazy">
-<img src="images/network-4.jpg" alt="Network diagram 4" loading="lazy">
-<img src="images/network-5.jpg" alt="Network diagram 5" loading="lazy">
-<img src="images/network-6.jpg" alt="Network diagram 6" loading="lazy">
-<img src="images/network-7.jpg" alt="Network diagram 7" loading="lazy">
-<img src="images/network-8.jpg" alt="Network diagram 8" loading="lazy">
-<img src="images/network-9.jpg" alt="Network diagram 9" loading="lazy">
-<img src="images/network-10.jpg" alt="Network diagram 10" loading="lazy">
-<img src="images/network-11.jpg" alt="Network diagram 11" loading="lazy">
-<img src="images/network-12.jpg" alt="Network diagram 12" loading="lazy">
-</div>
-  </section>
+<!-- NETWORK SECTION -->
+<section class="network-section">
+  <h2>Our Network</h2>
 
-  <div id="footer"></div>
+  <div class="network-large-box">
+    <a href="assets/Profile-Mark.pdf" target="_blank" rel="noopener">
+      <img src="images/team.webp" alt="Network overview">
+    </a>
+  </div>
 
-   <script src="assets/js/main.js" defer></script>
-  </body>
+  <div class="network-grid">
+    <img src="images/network-1.jpg" alt="Network diagram 1" loading="lazy">
+    <img src="images/network-2.jpg" alt="Network diagram 2" loading="lazy">
+    <img src="images/network-3.jpg" alt="Network diagram 3" loading="lazy">
+    <img src="images/network-4.jpg" alt="Network diagram 4" loading="lazy">
+    <img src="images/network-5.jpg" alt="Network diagram 5" loading="lazy">
+    <img src="images/network-6.jpg" alt="Network diagram 6" loading="lazy">
+    <img src="images/network-7.jpg" alt="Network diagram 7" loading="lazy">
+    <img src="images/network-8.jpg" alt="Network diagram 8" loading="lazy">
+    <img src="images/network-9.jpg" alt="Network diagram 9" loading="lazy">
+    <img src="images/network-10.jpg" alt="Network diagram 10" loading="lazy">
+    <img src="images/network-11.jpg" alt="Network diagram 11" loading="lazy">
+    <img src="images/network-12.jpg" alt="Network diagram 12" loading="lazy">
+  </div>
+</section>
+
+
+<div id="footer"></div>
+<script src="assets/js/main.js" defer></script>
+
+</body>
 </html>
