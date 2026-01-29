@@ -522,11 +522,18 @@ nav.active {
 
 /* ========= NETWORK INTRO ========= */
 .network-intro {
-  text-align: center;
-  padding: 40px 20px;
+  width: 100vw;              /* full viewport width */
+  padding: 40px 20px;        /* spacing inside */
   font-family: 'Bricolage Grotesque', Arial, sans-serif;
   font-size: 20px;
-  color: #09126a;
+  color: #fff;               /* white text */
+  background-color: #09126a; /* brand blue */
+  text-align: center;
+  box-sizing: border-box;    /* ensures padding doesn’t overflow */
+}
+
+/* Optional: restrict text width for readability */
+.network-intro p {
   max-width: 900px;
   margin: 0 auto;
 }
