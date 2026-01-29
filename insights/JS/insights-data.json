@@ -3,28 +3,28 @@
     "title": "A UK / NZ Property Market Comparison",
     "summary": "After 10 years working in NZ, these are my reflections on how the UK property market differs from NZ",
     "date": "22 July 2025",
-    "image": "insights/images/insight-001.jpg",
-    "link": "insights/articles/insight-001.html"
+    "image": "images/insights/insight-001.jpg",
+    "link": "articles/insight-001.html"
   },
   {
     "title": "A Property Strategy Driving the Business",
-    "summary": "Fletcher Steel's preperty strategy is text book for how the property team can (and should) affect a material business performance",
+    "summary": "Fletcher Steel's property strategy is text book for how the property team can (and should) affect a material business performance",
     "date": "14 October 2025",
     "image": "images/insights/insight-002.jpg",
-    "link": "insights/insight-002.html"
-  }
-    {
-    "title": "Bahia, Brazil ",
+    "link": "articles/insight-002.html"
+  },
+  {
+    "title": "Bahia, Brazil",
     "summary": "Could the proposed bridge across the Bay of All Saints be Auckland's new North Shore.",
     "date": "29 January 2026",
-    "image": "images/insights/insight-002.jpg",
-    "link": "insights/insight-002.html"
-  }
-     {
+    "image": "images/insights/insight-003.jpg",
+    "link": "articles/insight-003.html"
+  },
+  {
     "title": "Land Valuation Trends",
     "summary": "Analysis of the latest land valuation trends impacting development strategy.",
     "date": "29 January 2026",
-    "image": "images/insights/insight-002.jpg",
-    "link": "insights/insight-002.html"
+    "image": "images/insights/insight-004.jpg",
+    "link": "articles/insight-004.html"
   }
 ]
