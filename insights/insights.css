@@ -24,7 +24,7 @@
 }
 
 .home-carousel .carousel-wrapper {
-  width: 90%;
+  width: 80%;
   overflow: hidden;
   height: 440px; /* ensures cards are visible */
 }
@@ -48,7 +48,7 @@
 
 .home-carousel .project-box img {
   width: 100%;
-  height: 130px;
+  height: 180px;
   object-fit: cover;
 }
 
