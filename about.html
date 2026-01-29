@@ -43,7 +43,11 @@
     .about-split {
       display: flex;
       min-height: 320px;
+        align-items: stretch;   /* 🔑 allows image column to grow */
     }
+    .about-split.reverse {
+  flex-direction: row-reverse;
+}
     .about-split.reverse { flex-direction: row-reverse; }
     .about-split .text {
       width: 50%;
