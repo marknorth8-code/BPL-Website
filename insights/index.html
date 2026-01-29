@@ -44,6 +44,33 @@
 <div id="footer"></div>
 
 <script src="../assets/js/main.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const carouselTrack = document.querySelector(".carousel-track");
+
+  // Load JSON data
+  fetch("assets/js/insights-data.json")
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(insight => {
+        // Create card element
+        const card = document.createElement("div");
+        card.className = "insight-card";
+
+        card.innerHTML = `
+          <img src="${insight.image}" alt="${insight.title}" loading="lazy">
+          <h2>${insight.title}</h2>
+          <p class="summary">${insight.summary}</p>
+          <p class="date">${insight.date}</p>
+          <a class="read-more" href="${insight.link}">Read more</a>
+        `;
+
+        carouselTrack.appendChild(card);
+      });
+    })
+    .catch(err => console.error("Error loading insights:", err));
+});
+</script>
 
 </body>
 
