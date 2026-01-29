@@ -37,3 +37,17 @@
 </main>
 
 <div id="footer"></div
+                   
+<script>
+// Function to load external HTML into a div
+function loadHTML(id, file) {
+  fetch(file)
+    .then(response => response.text())
+    .then(data => document.getElementById(id).innerHTML = data)
+    .catch(err => console.error(`Failed to load ${file}:`, err));
+}
+
+// Load header and footer
+loadHTML('header', 'header.html');
+loadHTML('footer', 'footer.html');
+</script>
