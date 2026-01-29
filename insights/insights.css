@@ -59,11 +59,8 @@
 
 .home-carousel .project-box p {
   font-size: 14px;
-  margin: 0 10px 10px 10px;
+  margin: 10 10px 10px 10px;
     color: #555;
-}
-.home-carousel .project-box p:last-of-type {
-  margin-top: 20px; /* blank line above date */
 }
 
 /* ================= CAROUSEL CARD HOVER EFFECT ================= */
