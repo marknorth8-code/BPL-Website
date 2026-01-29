@@ -18,6 +18,7 @@ img {
 /* ================= HEADER ================= */
 header {
   position: fixed;
+   z-index: 9999;
   top: 0;
   left: 0;
   width: 100%;
@@ -323,6 +324,9 @@ nav a {
 
   /* show hamburger on mobile */
   .hamburger {
+     position: relative;
+  z-index: 10000;
+  pointer-events: auto;
     display: block;
     font-size: 28px;
     background: none;
