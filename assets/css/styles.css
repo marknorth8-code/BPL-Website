@@ -217,20 +217,23 @@ nav a {
 }
 
 /* ================= INSIGHTS LINK SECTION ================= */
-.insights-link {
-  background: #7B014C;
-  color: #fff;
-  padding: 0;
-  font-family: 'Inknut Antiqua', serif;
-  font-size: 24px;
-  line-height: 1.2;
-  border-radius: 6px;
-  display: inline-block; /* wraps background tightly */
-  text-align: right;     /* aligns text inside the box */
+.section-insights {
+  width: 100%;
+  background: #7B014C;      /* full-width red background */
+  padding: 0;               /* no vertical padding */
 }
 
-.insights-link a {
-  color: #fff;         /* link color */
+.section-insights p {
+  margin: 0;                /* remove default paragraph spacing */
+  line-height: 1.2;         /* lines close together */
+  font-family: 'Inknut Antiqua', serif;
+  font-size: 24px;
+  color: #fff;
+  text-align: right;        /* text aligned to right edge */
+}
+
+.section-insights a {
+  color: #fff;
   text-decoration: underline;
 }
 
