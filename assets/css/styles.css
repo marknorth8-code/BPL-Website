@@ -427,3 +427,166 @@ nav.active {
     font-size: 30px;
   }
 }
+/* ================= PEOPLE PAGE STYLES ================= */
+
+/* ========= HERO SECTION ========= */
+.people-hero {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/people.webp') center/cover no-repeat;        
+}
+
+.people-hero h1 {
+  position: relative;
+  z-index: 2;
+  font-family: 'Inknut Antiqua', serif;
+  font-size: 40px;
+  color: #fff;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .people-hero {
+    height: 300px;
+    padding-left: 30px;
+  }
+  .people-hero h1 {
+    font-size: 32px;
+  }
+}
+
+/* ========= PROFILE SECTION ========= */
+.profile-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 60px 40px;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.profile-photo {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.profile-photo img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.profile-bio {
+  flex: 2 1 400px;
+  font-family: 'Bricolage Grotesque', Arial, sans-serif;
+  font-size: 20px;
+  color: #09126a;
+}
+
+.profile-bio p {
+  margin-bottom: 20px;
+}
+
+.profile-bio a {
+  display: inline-block;
+  padding: 10px 25px;
+  background: #09126a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.profile-bio a:hover {
+  background: #0d1a99;
+}
+
+/* STACK PHOTO ABOVE BIO ON MOBILE */
+@media (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-bio {
+    flex: 1 1 100%;
+  }
+  .profile-bio a {
+    margin-top: 15px;
+  }
+}
+
+/* ========= NETWORK INTRO ========= */
+.network-intro {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Bricolage Grotesque', Arial, sans-serif;
+  font-size: 20px;
+  color: #09126a;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ========= NETWORK GRID SECTION ========= */
+.network-section {
+  background-color: #09126a;
+  padding: 80px 40px;
+  color: #fff;
+  text-align: center;
+}
+
+.network-section h2 {
+  font-family: 'Inknut Antiqua', serif;
+  font-size: 28px;
+  margin-bottom: 50px;
+}
+
+.network-large-box {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 50px auto;
+  background: #ffffff;
+  border: 1px solid #000;
+  aspect-ratio: 17 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.network-large-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.network-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 70px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.network-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: #ffffff;
+}
+
+/* RESPONSIVE GRID */
+@media (max-width: 1024px) {
+  .network-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .network-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
