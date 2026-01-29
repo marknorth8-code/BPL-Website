@@ -220,7 +220,7 @@ nav a {
 .section-insights {
   width: 100%;
   background: #7B014C;      /* full-width red background */
-  padding: 0;               /* no vertical padding */
+  padding: 10px 10px;               /* no vertical padding */
 }
 
 .section-insights p {
@@ -230,6 +230,7 @@ nav a {
   font-size: 24px;
   color: #fff;
   text-align: right;        /* text aligned to right edge */
+  margin-right: 40px; /* moves text in from right edge */
 }
 
 .section-insights a {
