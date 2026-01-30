@@ -15,8 +15,8 @@
 }
 
 #article-summary {
-  font-family: 'Inknut Antiqua', serif;
-  font-weight: 700;
+  font-family: 'Inknut Antiqua', serif !important;
+  font-weight: 700 !important;
   font-size: 18px;
   color: #000000;
   margin-bottom: 30px;
