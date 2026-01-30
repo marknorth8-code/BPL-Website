@@ -5,7 +5,7 @@
   <meta name="description" content="Research and commentary from Barkertons on commercial real estate markets, land development strategy and land value and overseas opportunities including Brazil and New Zealand.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Insights | Barkertons Property</title>
-  
+
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,10 @@
   <link rel="stylesheet" href="insights.css">
 </head>
 
-  <script src="../assets/js/main.js" defer></script>
+<body>
+
+<script src="../assets/js/main.js" defer></script>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   fetch('JS/insights-data.json')
@@ -29,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       data.forEach(item => {
         const card = document.createElement('div');
-        card.className = 'project-box'; // matches main.js carousel code
+        card.className = 'project-box';
         card.innerHTML = `
           <a href="${item.link}">
             <img src="${item.image}" alt="${item.title}">
@@ -40,26 +43,24 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
         track.appendChild(card);
       });
+
+      // 🔑 tell main.js the carousel is now ready
+      window.dispatchEvent(new Event('carouselReady'));
     })
     .catch(err => console.error('Failed to load Insights JSON:', err));
 });
 </script>
-
-<body>
 
 <div id="header" style="height:90px;"></div>
 
 <main class="insights-page">
   <h1 class="insights-title">Our Insights</h1>
 
-  <!-- Carousel / summary cards container -->
   <section class="home-carousel">
     <div class="carousel-wrapper">
       <button class="carousel-arrow left">&#8249;</button>
 
-      <div class="carousel-track">
-        <!-- Cards are dynamically added here by JS -->
-      </div>
+      <div class="carousel-track"></div>
 
       <button class="carousel-arrow right">&#8250;</button>
     </div>
@@ -70,14 +71,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // Load header and footer
   function loadHTML(id, file) {
     fetch(file)
       .then(res => res.text())
       .then(data => document.getElementById(id).innerHTML = data)
       .catch(err => console.error(`Failed to load ${file}:`, err));
   }
+
   loadHTML('header', '../header.html');
   loadHTML('footer', '../footer.html');
+});
+</script>
 
- 
+</body>
+</html>
