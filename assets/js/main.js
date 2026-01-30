@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(res => res.text())
       .then(html => {
         header.innerHTML = html;
-        initMobileNav(); // re-init hamburger AFTER header loads
+        initMobileNav();
       });
   }
 
@@ -17,20 +17,16 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(res => res.text())
       .then(html => {
         footer.innerHTML = html;
-
-        // ✅ Year must be set AFTER footer loads
         const yearEl = document.getElementById("year");
         if (yearEl) yearEl.textContent = new Date().getFullYear();
       });
   }
 });
 
-
 /* ================= MOBILE NAV ================= */
 function initMobileNav() {
   const hamburger = document.querySelector('.hamburger');
-  const nav = document.querySelector('nav'); // ✅ scoped
-
+  const nav = document.querySelector('nav');
   if (!hamburger || !nav) return;
 
   hamburger.addEventListener('click', () => {
@@ -38,57 +34,12 @@ function initMobileNav() {
   });
 }
 
-  right.addEventListener('click', () => {
-    currentTranslate -= getItemWidth() + gap;
-    updateTranslate();
-  });
-
-  // Continuous hold
-  let scrollInterval;
-  function startScroll(dir) {
-    stopScroll();
-    scrollInterval = setInterval(() => {
-      currentTranslate -= dir * 10;
-      updateTranslate();
-    }, 16);
-  }
-  function stopScroll() {
-    clearInterval(scrollInterval);
-  }
-
-  left.addEventListener('mousedown', () => startScroll(-1));
-  right.addEventListener('mousedown', () => startScroll(1));
-  window.addEventListener('mouseup', stopScroll);
-  window.addEventListener('blur', stopScroll); // ✅ better than mouseleave
-
-  // Drag
-  let dragging = false, startX = 0, prevTranslate = 0;
-
-  track.addEventListener('mousedown', e => {
-    dragging = true;
-    startX = e.pageX;
-    prevTranslate = currentTranslate;
-    stopScroll();
-  });
-
-  window.addEventListener('mouseup', () => dragging = false);
-
-  window.addEventListener('mousemove', e => {
-    if (!dragging) return;
-    currentTranslate = prevTranslate + (e.pageX - startX);
-    updateTranslate();
-  });
-
-  window.addEventListener('resize', updateTranslate);
-
-  updateTranslate();
-});
+/* ================= CAROUSEL ================= */
 function initCarousel() {
   const carousel = document.querySelector('.home-carousel');
   if (!carousel || carousel.dataset.initialised) return;
 
   carousel.dataset.initialised = "true";
-
 
   const track = carousel.querySelector('.carousel-track');
   const items = carousel.querySelectorAll('.project-box');
@@ -106,8 +57,7 @@ function initCarousel() {
   }
 
   function getMaxScroll() {
-    const totalWidth =
-      items.length * (getItemWidth() + gap) - gap;
+    const totalWidth = items.length * (getItemWidth() + gap) - gap;
     return Math.max(totalWidth - wrapper.clientWidth, 0);
   }
 
@@ -117,17 +67,38 @@ function initCarousel() {
     track.style.transform = `translateX(${currentTranslate}px)`;
   }
 
-  left.onclick = () => {
+  // Arrow clicks
+  left.addEventListener('click', () => {
     currentTranslate += getItemWidth() + gap;
     updateTranslate();
-  };
+  });
 
-  right.onclick = () => {
+  right.addEventListener('click', () => {
     currentTranslate -= getItemWidth() + gap;
     updateTranslate();
-  };
+  });
+
+  // Drag (desktop)
+  let dragging = false, startX = 0, prevTranslate = 0;
+
+  track.addEventListener('mousedown', e => {
+    dragging = true;
+    startX = e.pageX;
+    prevTranslate = currentTranslate;
+  });
+
+  window.addEventListener('mouseup', () => dragging = false);
+
+  window.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    currentTranslate = prevTranslate + (e.pageX - startX);
+    updateTranslate();
+  });
+
+  window.addEventListener('resize', updateTranslate);
 
   updateTranslate();
 }
+
 window.addEventListener('load', initCarousel);
 window.addEventListener('carouselReady', initCarousel);
