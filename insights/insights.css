@@ -68,7 +68,33 @@
   font-size: 14px;
   color: #555;
 }
+  /* Allow drag + arrows to work */
+.home-carousel .carousel-track {
+  cursor: grab;
+}
 
+.home-carousel .carousel-track:active {
+  cursor: grabbing;
+}
+
+/* Stop links from hijacking drag events */
+.home-carousel .project-box a {
+  pointer-events: auto;
+}
+
+.home-carousel .carousel-track {
+  pointer-events: auto;
+}
+
+/* Ensure arrows are always clickable */
+.carousel-arrow {
+  pointer-events: auto;
+  z-index: 10;
+}
+/* Disable link interaction ONLY while dragging */
+.home-carousel .carousel-track.dragging .project-box a {
+  pointer-events: none;
+}
 /* ================= CAROUSEL CARD HOVER EFFECT ================= */
 .home-carousel .project-box {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -101,6 +127,7 @@
   .home-carousel .carousel-track {
     gap: 20px;
   }
+
 }
 .insights-title {
   display: none;
