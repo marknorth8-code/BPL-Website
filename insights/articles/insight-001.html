@@ -52,9 +52,9 @@
 
   <!-- IMAGE FROM JSON -->
   <div class="article-image">
-    <img id="images/insights-001" alt="">
+    <img id="article-image" alt="">
   </div>
-  <div class="JS/insights-data" id="article-caption"></div>
+  <div class="article-caption" id="article-caption"></div>
 
   <!-- ARTICLE BODY (static HTML) -->
   <p>
@@ -64,20 +64,23 @@
 
   <!-- LOAD ARTICLE METADATA -->
   <script>
-    fetch('../insights.json')  // adjust path if needed
+    fetch('../JS/insights-data.json')
       .then(res => res.json())
       .then(data => {
-        const article = data[0]; // first article OR match by slug
+
+        // TEMP: first article only (fine for now)
+        const article = data[0];
 
         document.getElementById('article-title').textContent = article.title;
         document.getElementById('article-date').textContent = article.date;
 
         const img = document.getElementById('article-image');
-        img.src = article.image;
+        img.src = '../images/insight-001.jpg';
         img.alt = article.title;
 
         document.getElementById('article-caption').textContent =
           article.caption || '';
+
       })
       .catch(err => console.error('Article load error:', err));
   </script>
