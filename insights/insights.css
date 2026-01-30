@@ -63,6 +63,11 @@
   margin: 0 10px 10px 10px;
     color: #555;
 }
+.home-carousel .project-box .date {
+  margin-top: 15px;  /* blank space above the date */
+  font-size: 14px;
+  color: #555;
+}
 
 /* ================= CAROUSEL CARD HOVER EFFECT ================= */
 .home-carousel .project-box {
