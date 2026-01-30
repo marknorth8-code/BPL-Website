@@ -98,22 +98,33 @@
   transform: translateY(-10px);
   box-shadow: 0 12px 20px rgba(0,0,0,0.2);
 }
-
-/* ================= MOBILE ADJUSTMENTS ================= */
 @media (max-width: 768px) {
-  /* carousel adjustments */
-  .home-carousel .carousel-wrapper { height: 500px; }
-  .home-carousel .project-box { width: 250px; height: 400px; }
-  .home-carousel .project-box img { height: 150px; }
-  .home-carousel .carousel-track { gap: 20px; }
+  /* Make carousel cards bigger on mobile */
+  .home-carousel .project-box {
+    width: 300px;      /* increased from 250px */
+    height: 480px;     /* increased from 400px */
+  }
 
-  /* body padding for mobile */
+  /* Increase image height proportionally */
+  .home-carousel .project-box img {
+    height: 200px;     /* increased from 150px */
+  }
+
+  /* Increase summary text inside cards */
+  .home-carousel .project-box p {
+    font-size: 16.5px; /* ~20% bigger */
+    line-height: 1.5;  /* readability */
+  }
+
+  /* Adjust carousel wrapper height to fit bigger cards */
+  .home-carousel .carousel-wrapper {
+    height: 500px;
+  }
+
+  /* Reduce page padding/gap above title on mobile */
   body {
-    padding-top: 40px; /* reduces gap above title */
+    padding-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
   }
 }
-
-/* hide main insights title */
-.insights-title { display: none; }
