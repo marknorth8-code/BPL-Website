@@ -15,7 +15,8 @@
 }
 
 #article-summary {
-  font-weight: 1000; /* summary bold */
+  font-weight: 700; /* summary bold */
+  color: #000000;   /* black text */
   font-size: 18px;
   margin-bottom: 30px;
 }
