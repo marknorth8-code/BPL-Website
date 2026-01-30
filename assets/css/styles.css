@@ -94,7 +94,7 @@ nav a {
 /* ================= SECTION 2 ================= */
 .section-blue {
   background: #f5f5f5;
-  color: #fff;
+  color: #09126a;
   padding: 80px 40px;
   font-size: 30px;
 }
@@ -137,7 +137,7 @@ nav a {
 }
 
 .home-carousel h3 {
-  color: #f5f5f5;
+  color: #555;
   font-size: 30px;
   font-family: 'Inknut Antiqua', serif; /* matches other titles */
   text-align: left !important;
