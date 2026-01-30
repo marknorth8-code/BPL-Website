@@ -38,41 +38,6 @@ function initMobileNav() {
   });
 }
 
-
-/* ================= HOME PAGE CAROUSEL ================= */
-window.addEventListener('load', () => {
-  const track = document.querySelector('.home-carousel .carousel-track');
-  const items = document.querySelectorAll('.home-carousel .project-box');
-  const left = document.querySelector('.home-carousel .carousel-arrow.left');
-  const right = document.querySelector('.home-carousel .carousel-arrow.right');
-  const wrapper = document.querySelector('.home-carousel .carousel-wrapper');
-
-  if (!track || !items.length || !left || !right || !wrapper) return;
-
-  let currentTranslate = 0;
-  const gap = parseInt(getComputedStyle(track).gap) || 40;
-
-  function getItemWidth() {
-    return items[0].getBoundingClientRect().width;
-  }
-
-  function getMaxScroll() {
-    const totalWidth = items.length * (getItemWidth() + gap) - gap;
-    return Math.max(totalWidth - wrapper.clientWidth, 0);
-  }
-
-  function updateTranslate() {
-    const maxScroll = getMaxScroll();
-    currentTranslate = Math.min(0, Math.max(currentTranslate, -maxScroll));
-    track.style.transform = `translateX(${currentTranslate}px)`;
-  }
-
-  // Arrow click
-  left.addEventListener('click', () => {
-    currentTranslate += getItemWidth() + gap;
-    updateTranslate();
-  });
-
   right.addEventListener('click', () => {
     currentTranslate -= getItemWidth() + gap;
     updateTranslate();
@@ -120,7 +85,10 @@ window.addEventListener('load', () => {
 });
 function initCarousel() {
   const carousel = document.querySelector('.home-carousel');
-  if (!carousel) return;
+  if (!carousel || carousel.dataset.initialised) return;
+
+  carousel.dataset.initialised = "true";
+
 
   const track = carousel.querySelector('.carousel-track');
   const items = carousel.querySelectorAll('.project-box');
@@ -161,3 +129,5 @@ function initCarousel() {
 
   updateTranslate();
 }
+window.addEventListener('load', initCarousel);
+window.addEventListener('carouselReady', initCarousel);
