@@ -15,10 +15,12 @@
 }
 
 #article-summary {
-  font-family: 'Inknut Antiqua', serif !important;
-  font-weight: 700 !important;
+  font-family: 'Inknut Antiqua', Georgia, Times, serif; /* primary + safe fallbacks */
+  font-weight: 900;       /* extra bold for maximum visual weight */
+  font-style: normal;     /* ensures not italic */
+  color: #000000;         /* black text */
   font-size: 18px;
-  color: #000000;
+  line-height: 1.6;       /* optional: improves readability for paragraphs */
   margin-bottom: 30px;
 }
 
