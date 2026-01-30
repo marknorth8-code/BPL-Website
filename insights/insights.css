@@ -98,28 +98,35 @@
   transform: translateY(-10px);
   box-shadow: 0 12px 20px rgba(0,0,0,0.2);
 }
+
 @media (max-width: 768px) {
-  /* Make carousel cards bigger on mobile */
+
+  .insights-page {
+    padding: 0 15px;  /* reduce horizontal padding */
+  }
+
   .home-carousel .project-box {
-    width: 400px;      /* increased from 250px */
-    height: 680px;     /* increased from 400px */
+    width: 90vw;       /* fit almost entire viewport width */
+    height: auto;      /* allow height to adjust based on content */
   }
 
-  /* Increase image height proportionally */
   .home-carousel .project-box img {
-    height: 400px;     /* increased from 150px */
+    width: 100%;       /* scale image to box width */
+    height: auto;      /* maintain aspect ratio */
+    max-height: 250px; /* prevent image from taking too much vertical space */
   }
 
-  /* Increase summary text inside cards */
   .home-carousel .project-box p {
-    font-size: 16.5px; /* ~20% bigger */
-    line-height: 1.5;  /* readability */
+    font-size: 16px;
+    line-height: 1.5;
+    max-height: 200px;   /* optional: prevent text from overflowing */
+    overflow: hidden;    /* hide excess if needed */
   }
 
-  /* Adjust carousel wrapper height to fit bigger cards */
   .home-carousel .carousel-wrapper {
-    height: 500px;
+    height: auto;       /* let the wrapper adjust to card height */
   }
+}
 
 /* Reduce page padding/gap above title on mobile */
 body {
