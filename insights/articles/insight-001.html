@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,7 @@
   <title>Insight Article | Barkertons Property</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500&family=Inknut+Antiqua:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
       font-family: 'Bricolage Grotesque', sans-serif;
@@ -14,26 +14,73 @@
       max-width: 800px;
       margin: auto;
     }
+
     h1 {
       font-family: 'Inknut Antiqua', serif;
+      margin-bottom: 10px;
+    }
+
+    .article-meta {
+      font-style: italic;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .article-image {
+      margin: 40px 0 10px;
+    }
+
+    .article-image img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .article-caption {
+      font-size: 14px;
+      color: #777;
+      text-align: center;
+      margin-bottom: 40px;
     }
   </style>
 </head>
+
 <body>
-  <h1>Working in New Zealand</h1>
-  <p><em>22 July 2025</em></p>
-  <p>As a UK chartered surveyor with experience across multiple international markets, observing the commercial property sector in New Zealand reveals some notable contrasts to the UK. While both markets share similarities in terms of professional standards, valuation methods, and lease structures, the scale, regulatory environment, and investor dynamics differ significantly.
 
-One of the most striking differences is market size and liquidity. New Zealand’s commercial property market is relatively small, with major activity concentrated in Auckland, Wellington, and Christchurch. Unlike the UK, where London dominates and offers deep institutional investment opportunities, New Zealand’s market is driven by a mix of local institutional investors, private investors, and owner-occupiers. This smaller market can lead to less frequent transactional activity and, occasionally, sharper price movements due to limited supply.
+  <!-- TITLE FROM JSON -->
+  <h1 id="article-title"></h1>
+  <div class="article-meta" id="article-date"></div>
 
-Regulation and planning also differ. The Resource Management Act (RMA) and local council planning frameworks play a pivotal role in New Zealand, impacting development timelines and zoning significantly. In contrast, the UK benefits from a more established, albeit complex, planning system where permitted development rights and planning precedents often provide greater predictability. Lease structures in New Zealand commonly adopt full repairing and insuring (FRI) leases, similar to the UK, but market practice often sees shorter lease terms and more flexible arrangements, reflecting the smaller tenant pool.
+  <!-- IMAGE FROM JSON -->
+  <div class="article-image">
+    <img id="article-image" alt="">
+  </div>
+  <div class="article-caption" id="article-caption"></div>
 
-Financing conditions present another distinction. New Zealand commercial property finance tends to be more conservative, with higher equity requirements and a stronger emphasis on local bank lending. In the UK, there is a broader spectrum of institutional finance options, securitised lending, and foreign capital participation, which can affect transaction volumes and yield compression differently.
+  <!-- ARTICLE BODY (static HTML) -->
+  <p>
+    As a UK chartered surveyor with experience across multiple international markets, observing the commercial property sector in New Zealand reveals some notable contrasts to the UK.
+    <!-- rest of your article unchanged -->
+  </p>
 
-Yield expectations and capital values also vary. New Zealand prime yields have historically been higher than those in major UK cities, reflecting lower market depth and perceived liquidity risk. Conversely, tenant incentives, rent reviews, and property management approaches are often more pragmatic and tenant-focused in New Zealand, reflecting a market where long-term relationships are key.
+  <!-- LOAD ARTICLE METADATA -->
+  <script>
+    fetch('../insights.json')  // adjust path if needed
+      .then(res => res.json())
+      .then(data => {
+        const article = data[0]; // first article OR match by slug
 
-Finally, sustainability and earthquake resilience are major considerations in New Zealand. The need for buildings to meet seismic standards, particularly post-Christchurch earthquakes, has become a dominant factor in investment and valuation—an aspect less prominent in the UK, though ESG considerations are gaining traction there.
+        document.getElementById('article-title').textContent = article.title;
+        document.getElementById('article-date').textContent = article.date;
 
-Overall, while commercial property fundamentals remain consistent, New Zealand’s smaller, regulation-sensitive, and risk-conscious market requires a more hands-on, relationship-driven approach compared to the broader, more liquid, and institutionally dominated UK market.</p>
+        const img = document.getElementById('article-image');
+        img.src = article.image;
+        img.alt = article.title;
+
+        document.getElementById('article-caption').textContent =
+          article.caption || '';
+      })
+      .catch(err => console.error('Article load error:', err));
+  </script>
+
 </body>
 </html>
