@@ -227,6 +227,7 @@ nav a {
   font-size: 20px;
   color: #555;
   text-align: center;
+  line-height: 1.6;   /* 👈 space between lines */
 }
 
 .section-partner p {
