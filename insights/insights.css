@@ -49,14 +49,14 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #555;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 /* TITLE */
 .insight-card-link h3 {
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   line-height: 1.2;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -66,9 +66,9 @@
 /* SUMMARY (3 lines max) */
 .insight-card-link p {
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.2;
   color: #444;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   display: -webkit-box;
   -webkit-line-clamp: 3;    /* maximum 3 lines */
   -webkit-box-orient: vertical;
