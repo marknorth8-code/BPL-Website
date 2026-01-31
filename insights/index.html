@@ -27,7 +27,21 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch('JS/insights-data.json')
     .then(res => res.json())
     .then(data => {
-      const track = document.querySelector('.home-carousel .carousel-track');
+     const grid = document.getElementById("insightsGrid");
+
+      grid.innerHTML += `
+  <article class="insight-card">
+    <img src="${item.image}" alt="${item.title}" loading="lazy">
+    <div class="insight-content">
+      <span class="insight-category">${item.category}</span>
+      <h3>${item.title}</h3>
+      <p>${item.excerpt}</p>
+      <a href="${item.url}" class="read-more">Read more</a>
+    </div>
+  </article>
+`;
+
+// 🔑 Carousel change - can this section be removed??----------------------------      
       if (!track) return;
 
       data.forEach(item => {
@@ -51,6 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+  // 🔑 Carousel change - can this section be removed??----------------------------
+  
 <div id="header" style="height:90px;"></div>
 
 <main class="insights-page">
