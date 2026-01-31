@@ -39,10 +39,9 @@
   margin-bottom: 6px;
 }
 
+/* HIDE INSIGHT TITLES */
 .insight-card-link h3 {
-  font-size: 18px;
-  line-height: 1.3;
-  margin: 0 0 10px;
+  display: none;
 }
 
 .insight-card-link p {
@@ -58,9 +57,6 @@
   color: #09126a;
   text-decoration: underline;
   font-size: 14px;
-}
-.insight-card-link h3 {
-  display: none;
 }
 
 /* ================= INSIGHTS GRID ================= */
@@ -91,10 +87,6 @@
   .insights-grid {
     grid-template-columns: 1fr;
     gap: 24px;
-  }
-
-  .insight-card-link h3 {
-    font-size: 17px;
   }
 
   .insight-card-link p {
