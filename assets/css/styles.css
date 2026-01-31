@@ -207,6 +207,13 @@ nav a {
   background: #0b158a;
   color: #fff;
 }
+/* Desktop carousel: hide native scroll, enable JS transform */
+@media (min-width: 769px) {
+  .home-carousel .carousel-track {
+    overflow-x: hidden;
+    cursor: default;
+  }
+}
 
 /* ================= SECTION 5 ================= */
 
