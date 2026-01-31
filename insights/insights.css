@@ -1,4 +1,13 @@
-/* ================= INSIGHTS PAGE ================= */
+/* ================= INSIGHTS PAGE LAYOUT ================= */
+.insights-page {
+  padding: 60px 40px;          /* top/bottom 60px, left/right 40px */
+}
+
+.insights-grid {
+  max-width: 1200px;           /* prevents cards stretching too wide */
+  margin: 0 auto;              /* centers the grid */
+  gap: 30px;                   /* space between cards */
+}
 
 .insight-card-link {
   display: flex;
