@@ -44,19 +44,18 @@
   height: 100%;
 }
 
-.insight-card-link .insight-category {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #555;
-  margin-bottom: 4px;
+/* Wrap summary+date to allow button pinned */
+.insight-card-link .summary-container {
+  flex-grow: 1; /* takes all available space */
+  display: flex;
+  flex-direction: column;
 }
 
 /* TITLE */
 .insight-card-link h3 {
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   line-height: 1.2;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -66,11 +65,11 @@
 /* SUMMARY (3 lines max) */
 .insight-card-link p {
   font-size: 15px;
-  line-height: 1.2;
+  line-height: 1.4;
   color: #444;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   display: -webkit-box;
-  -webkit-line-clamp: 3;    /* maximum 3 lines */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -78,8 +77,6 @@
 
 /* ARTICLE DATE */
 .insight-card-link .insight-date {
-  display: block;
-  margin-top: auto;       /* push to bottom if possible */
   color: #09126a;         /* brand blue */
   font-size: 14px;
   font-weight: 500;
@@ -89,9 +86,9 @@
 /* READ MORE BUTTON */
 .insight-card-link .read-more {
   display: inline-block;
-  margin: 0 auto;         /* center horizontally */
-  padding: 6px 14px;      /* slightly smaller than before */
-  background-color: #09126a;  /* brand blue */
+  margin: 0 auto 0;        /* center horizontally */
+  padding: 6px 14px;
+  background-color: #09126a;
   color: #ffffff;
   font-size: 14px;
   font-weight: 600;
