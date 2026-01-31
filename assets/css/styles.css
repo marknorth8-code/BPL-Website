@@ -222,25 +222,17 @@ nav a {
 }
 
 /* ================= SECTION 6 ================= */
-.section-partner {
-  padding: 40px 40px;
-  font-size: 18px;
-  color: #555;
-  text-align: center;
-  line-height: 1.6;   /* 👈 space between lines */
-  margin-bottom: 48px;   /* 👈 space between paragraphs */
-}
 
-.section-partner p {
-  text-align: center;
-  margin: 0 auto;
-  }
-  .section-partner p strong {
-  display: block;          /* lets it behave like a heading */
-  font-size: 32px;         /* 👈 increase title size */
-     font-family: 'Bricolage Grotesque'
-  margin-bottom: 30px;     /* space below the title */
-}
+ .about-partner {
+      background: #fff;
+      color: #555;
+      padding: 10px 30px;
+      text-align: center;
+      font-family: 'Bricolage Grotesque', sans-serif;
+    }
+    .about-partner h3 { font-size: 32px; margin-bottom: 30px; }
+    .about-partner p { max-width: 800px; margin: 20px auto; font-size: 18px; line-height: 1.6; }
+    .about-partner a { color: #09126a; font-weight: 600; text-decoration: underline; }
 
 /* ================= INSIGHTS LINK ================= */
 .section-insights {
