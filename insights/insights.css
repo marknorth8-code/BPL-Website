@@ -75,6 +75,23 @@
   text-decoration: underline;
   font-size: 14px;
 }
+/* ================= READ MORE BUTTON ================= */
+.insight-card-link .read-more {
+  display: inline-block;          /* makes it behave like a button */
+  margin-top: 12px;               /* spacing from date */
+  padding: 8px 16px;              /* vertical and horizontal padding */
+  background-color: #09126a;      /* brand blue */
+  color: #ffffff;                 /* white text */
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;          /* remove underline */
+  border-radius: 6px;             /* rounded corners */
+  transition: background-color 0.25s ease;
+}
+
+.insight-card-link .read-more:hover {
+  background-color: #101f9c;      /* darker blue on hover */
+}
 
 /* ================= INSIGHTS GRID ================= */
 
