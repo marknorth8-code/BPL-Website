@@ -234,6 +234,11 @@ nav a {
 .section-partner p {
   text-align: center;
   margin: 0 auto;
+  }
+  .section-partner p strong {
+  display: block;          /* lets it behave like a heading */
+  font-size: 28px;         /* 👈 increase title size */
+  margin-bottom: 16px;     /* space below the title */
 }
 
 /* ================= INSIGHTS LINK ================= */
