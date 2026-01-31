@@ -224,7 +224,7 @@ nav a {
 /* ================= SECTION 6 ================= */
 .section-partner {
   padding: 40px 40px;
-  font-size: 20px;
+  font-size: 18px;
   color: #555;
   text-align: center;
   line-height: 1.6;   /* 👈 space between lines */
@@ -239,7 +239,7 @@ nav a {
   display: block;          /* lets it behave like a heading */
   font-size: 32px;         /* 👈 increase title size */
      font-family: 'Inknut Antiqua', serif;
-  margin-bottom: 16px;     /* space below the title */
+  margin-bottom: 30px;     /* space below the title */
 }
 
 /* ================= INSIGHTS LINK ================= */
