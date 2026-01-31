@@ -16,64 +16,74 @@
 
   <!-- INSIGHTS PAGE CSS -->
   <link rel="stylesheet" href="insights.css">
+
+  <!-- MAIN JS -->
+  <script src="../assets/js/main.js" defer></script>
 </head>
 
 <body>
 
-<script src="../assets/js/main.js" defer></script>
+  <!-- HEADER -->
+  <div id="header" style="height:90px;"></div>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  fetch('JS/insights-data.json')
-    .then(res => res.json())
-    .then(data => {
-     const grid = document.getElementById("insightsGrid");
+  <!-- PAGE CONTENT -->
+  <main class="insights-page">
 
-      grid.innerHTML += `
-  <article class="insight-card">
-    <img src="${item.image}" alt="${item.title}" loading="lazy">
-    <div class="insight-content">
-      <span class="insight-category">${item.category}</span>
-      <h3>${item.title}</h3>
-      <p>${item.excerpt}</p>
-      <a href="${item.url}" class="read-more">Read more</a>
-    </div>
-  </article>
-`;
+    <h1 class="insights-title">Our Insights</h1>
 
-    .catch(err => console.error('Failed to load Insights JSON:', err));
-});
-</script>
-   
-<div id="header" style="height:90px;"></div>
+    <section class="insights-grid-section">
+      <div class="insights-grid" id="insightsGrid">
+        <!-- insight cards injected here -->
+      </div>
+    </section>
 
-<main class="insights-page">
-  <h1 class="insights-title">Our Insights</h1>
-  
-<section class="insights-grid-section">
-  <div class="insights-grid" id="insightsGrid">
-    <!-- insight cards injected here -->
-  </div>
-</section>
+  </main>
 
+  <!-- FOOTER -->
+  <div id="footer"></div>
 
-</main>
+  <!-- INSIGHTS DATA LOAD -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch('JS/insights-data.json')
+        .then(res => res.json())
+        .then(data => {
+          const grid = document.getElementById("insightsGrid");
 
-<div id="footer"></div>
+          data.forEach(item => {
+            const article = document.createElement("article");
+            article.className = "insight-card";
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  function loadHTML(id, file) {
-    fetch(file)
-      .then(res => res.text())
-      .then(data => document.getElementById(id).innerHTML = data)
-      .catch(err => console.error(`Failed to load ${file}:`, err));
-  }
+            article.innerHTML = `
+              <img src="${item.image}" alt="${item.title}" loading="lazy">
+              <div class="insight-content">
+                <h3>${item.title}</h3>
+                <p>${item.summary}</p>
+                <a href="${item.link}" class="read-more">Read more</a>
+              </div>
+            `;
 
-  loadHTML('header', '../header.html');
-  loadHTML('footer', '../footer.html');
-});
-</script>
+            grid.appendChild(article);
+          });
+        })
+        .catch(err => console.error("Failed to load Insights JSON:", err));
+    });
+  </script>
+
+  <!-- HEADER / FOOTER LOAD -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      function loadHTML(id, file) {
+        fetch(file)
+          .then(res => res.text())
+          .then(html => document.getElementById(id).innerHTML = html)
+          .catch(err => console.error(`Failed to load ${file}:`, err));
+      }
+
+      loadHTML("header", "../header.html");
+      loadHTML("footer", "../footer.html");
+    });
+  </script>
 
 </body>
 </html>
